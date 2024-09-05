@@ -139,7 +139,7 @@ if (document.getElementById('layout-menu')) {
     const switchImagesList = [].slice.call(document.querySelectorAll('[data-app-' + style + '-img]'));
     switchImagesList.map(function (imageEl) {
       const setImage = imageEl.getAttribute('data-app-' + style + '-img');
-      imageEl.src = assetsPath + 'img/' + setImage; // Using window.assetsPath to get the exact relative path
+      imageEl.src =  'img/' + setImage; // Using window.assetsPath to get the exact relative path
     });
   }
 
@@ -214,7 +214,7 @@ if (document.getElementById('layout-menu')) {
         debug: false,
         fallbackLng: 'en',
         backend: {
-          loadPath: assetsPath + 'json/locales/{{lng}}.json'
+          loadPath:  '/assets/json/locales/{{lng}}.json'
         },
         returnObjects: true
       })
@@ -523,7 +523,7 @@ if (typeof $ !== 'undefined') {
       }
       // Search API AJAX call
       var searchData = $.ajax({
-        url: assetsPath + 'json/' + searchJson, //? Use your own search api instead
+        url:  '/assets/json/' + searchJson, //? Use your own search api instead
         dataType: 'json',
         async: false
       }).responseJSON;
@@ -585,7 +585,7 @@ if (typeof $ !== 'undefined') {
                     '<a href="javascript:;">' +
                     '<div class="d-flex w-50">' +
                     '<img class="me-3" src="' +
-                    assetsPath +
+                    
                     src +
                     '" alt="' +
                     name +
@@ -625,7 +625,7 @@ if (typeof $ !== 'undefined') {
                     '<a href="app-user-view-account.html">' +
                     '<div class="d-flex align-items-center">' +
                     '<img class="rounded-circle me-3" src="' +
-                    assetsPath +
+                    
                     src +
                     '" alt="' +
                     name +

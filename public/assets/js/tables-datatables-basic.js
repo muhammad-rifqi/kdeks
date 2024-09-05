@@ -126,7 +126,7 @@ $(function () {
 
   if (dt_basic_table.length) {
     dt_basic = dt_basic_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
+      ajax: '/assets/json/table-datatable.json',
       columns: [
         { data: '' },
         { data: 'id' },
@@ -180,7 +180,7 @@ $(function () {
             if ($user_img) {
               // For Avatar image
               var $output =
-                '<img src="' + assetsPath + 'img/avatars/' + $user_img + '" alt="Avatar" class="rounded-circle">';
+                '<img src="' + '/assets/img/avatars/' + $user_img + '" alt="Avatar" class="rounded-circle">';
             } else {
               // For Avatar badge
               var stateNum = Math.floor(Math.random() * 6);
@@ -450,7 +450,15 @@ $(function () {
         }
       }
     });
-    $('div.head-label').html('<h5 class="card-title mb-0">News</h5>');
+    var url = new URL(window.location.href);
+    var headers = url.pathname.split('/')[1];
+    var shows ="";
+    if(headers == 'tentangkami'){
+      shows += "Tentang Kami"
+    }else{
+      shows += "NONE";
+    }
+    $('div.head-label').html(`<h5 class="card-title mb-0">${shows}</h5>`);
   }
 
   // Add New record
@@ -493,7 +501,7 @@ $(function () {
 
   if (dt_complex_header_table.length) {
     var dt_complex = dt_complex_header_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
+      ajax: '/assets/json/table-datatable.json',
       columns: [
         { data: 'full_name' },
         { data: 'email' },
@@ -567,7 +575,7 @@ $(function () {
   var groupColumn = 2;
   if (dt_row_grouping_table.length) {
     var groupingTable = dt_row_grouping_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
+      ajax: '/assets/json/table-datatable.json',
       columns: [
         { data: '' },
         { data: 'full_name' },
@@ -716,7 +724,7 @@ $(function () {
   var lang = 'German';
   if (dt_multilingual_table.length) {
     var table_language = dt_multilingual_table.DataTable({
-      ajax: assetsPath + 'json/table-datatable.json',
+      ajax: '/assets/json/table-datatable.json',
       columns: [
         { data: '' },
         { data: 'full_name' },
