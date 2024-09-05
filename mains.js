@@ -30,4 +30,20 @@ apps.get('/news', (req, res) => {
     res.sendFile(path.resolve('./views/news.html'));
 })
 
+apps.get('/tentangkami', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/tentangkami.html'));
+})
+
+apps.get('/sejarah', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/sejarah.html'));
+})
+
+apps.get('/sk', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/sk.html'));
+})
+
+apps.get('/video', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/video.html'));
+})
+
 apps.listen(3002);
