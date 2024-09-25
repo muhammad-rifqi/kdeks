@@ -27,12 +27,12 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
+                <a href="/news" class="menu-link">
                   <div data-i18n="News">News</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
+                <a href="/news_category" class="menu-link">
                   <div data-i18n="News Categories">News Categories</div>
                 </a>
               </li>
@@ -68,7 +68,7 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
                 </a>
               </li>
               <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
+                <a href="/photo" class="menu-link">
                   <div data-i18n="Photos">Photos</div>
                 </a>
               </li>
@@ -77,7 +77,7 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
 
           <!-- Agenda -->
           <li class="menu-item">
-            <a href="/dashboard" class="menu-link">
+            <a href="/agenda" class="menu-link">
               <i class="menu-icon tf-icons ri-calendar-line"></i>
               <div data-i18n="Agenda">Agenda</div>
             </a>
@@ -91,15 +91,11 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                  <div data-i18n="News">News</div>
+                <a href="/home_management" class="menu-link">
+                  <div data-i18n="Home">Home</div>
                 </a>
               </li>
-              <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                  <div data-i18n="News Categories">News Categories</div>
-                </a>
-              </li>
+
             </ul>
           </li>
 
@@ -111,13 +107,8 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                  <div data-i18n="News">News</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                  <div data-i18n="News Categories">News Categories</div>
+                <a href="/elibrary" class="menu-link">
+                  <div data-i18n="E-Library">E-Library</div>
                 </a>
               </li>
             </ul>
@@ -131,13 +122,8 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                  <div data-i18n="News">News</div>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a href="/dashboard" class="menu-link">
-                  <div data-i18n="News Categories">News Categories</div>
+                <a href="/users" class="menu-link">
+                  <div data-i18n="Users">Users</div>
                 </a>
               </li>
             </ul>
@@ -145,7 +131,7 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
 
           <!-- Opini -->
           <li class="menu-item">
-            <a href="/dashboard" class="menu-link">
+            <a href="/opini" class="menu-link">
               <i class="menu-icon tf-icons ri-chat-1-line"></i>
               <div data-i18n="Opini">Opini</div>
             </a>
