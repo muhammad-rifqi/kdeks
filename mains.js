@@ -74,4 +74,10 @@ apps.get('/opini', (req, res) => {
     res.sendFile(path.resolve('./views/opini/opini.html'));
 })
 
+//::::::::::::::: Api & Query DB AUTH ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+apps.post('/act_login', db.do_login);
+
+apps.get("/logout", db.do_logout);
+
 apps.listen(3002);

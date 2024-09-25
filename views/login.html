@@ -90,7 +90,6 @@
             gap: 0px;
             border-radius: 10px 0px 0px 0px;
             opacity: 0px;
-            angle: -0 deg;
 
             background: #146AA4;
             color: white;
@@ -156,55 +155,22 @@
         <div class="login-box">
             <h2>Welcome</h2>
             <h3>Login</h3>
-            <div class="input-group">
-                <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username">
-            </div>
-            <div class="input-group">
-                <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password">
-                <i class="fas fa-eye" style="right: 10px; left: auto;"></i>
-            </div>
-            <button id="loginBtn">Login</button>
+            <form class="sign-in-form" action="/act_login" method="post">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Email" name="email" id="email">
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password" id="password">
+                    <i class="fas fa-eye" style="right: 10px; left: auto;"></i>
+                </div>
+                <button id="loginBtn" type="submit">Login</button>
+            </form>
             <a href="#">Cancel</a>
         </div>
     </div>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Login Successful!</p>
-        </div>
-    </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("loginBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function () {
-            modal.style.display = "flex";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 
 </html>
