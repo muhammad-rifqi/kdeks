@@ -10,7 +10,7 @@ document.write(`
   <script src="/assets/vendor/libs/i18n/i18n.js"></script>
   <script src="/assets/vendor/libs/typeahead-js/typeahead.js"></script>
   <script src="/assets/vendor/js/menu.js"></script>
-
+<script src="/assets/js/main.js"></script>
   <!-- endbuild -->
 
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
