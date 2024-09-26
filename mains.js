@@ -76,6 +76,28 @@ apps.get('/opini', (req, res) => {
 
 //::::::::::::::: Api & Query DB AUTH ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+apps.get('/api_news', db.news);
+
+apps.get('/api_news_detail/:id', db.news_details);
+
+apps.get('/api_newscategory', db.news_categories);
+
+apps.get('/api_detailnewscategory/:id', db.news_detailnewscategory);
+
+apps.get('/api_newsphoto', db.news_photo);
+
+apps.get('/api_newsvideo', db.news_video);
+
+apps.get('/api_detail_newsphoto/:id', db.news_photodetail);
+
+apps.get('/api_detail_newsvideo/:id', db.news_videodetail);
+
+apps.get('/api_users', db.users);
+
+apps.get('/api_usersroles', db.userroles);
+
+apps.get('/api_detailusers/:id', db.detailsusers);
+
 apps.post('/act_login', db.do_login);
 
 apps.get("/logout", db.do_logout);

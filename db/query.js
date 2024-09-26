@@ -56,12 +56,163 @@ const dashboards = async (req, res) => {
 }
 
 //::::::::::::::::::::::::::::::End Of Dashboard :::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::: Berita ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+const news = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM news');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const news_details = async (req, res) => {
+    const id_news = req.params.id;
+    const sql = await executeQuery('SELECT * FROM news where id = ? ', [id_news]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const news_categories = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM news_categories');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const news_detailnewscategory = async (req, res) => {
+    const id_cat = req.params.id;
+    const sql = await executeQuery('SELECT * FROM news_categories where id = ? ', [id_cat]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+//::::::::::::::::::::::::::::::End Of Categories :::::::::::::::::::::::::::::::::::::::::::::::::::::
+//::::::::::::::::::::::::::::::Start Of Abouts:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+const abouts = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM abouts');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+
+}
+
+const detailabout = async (req, res) => {
+    const id_abouts = req.params.id;
+    const sql = await executeQuery('SELECT *  FROM  abouts where id=?', [id_abouts]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+//::::::::::::::::::::::::::::::End Of Abouts :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+//::::::::::::::::::::::::::::::Start Of Photos & Videos :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+const news_photo = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM news_photos')
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const news_video = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM news_videos')
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const news_photodetail = async (req, res) => {
+    const id_ph = req.params.id;
+    const sql = await executeQuery('SELECT * FROM  news_photos where id=?', [id_ph]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const news_videodetail = async (req, res) => {
+    const id_vid = req.params.id;
+    const sql = await executeQuery('SELECT * FROM  news_videos where id=?', [id_vid]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+//::::::::::::::::::::::::::::::End Of Photos & Videos :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+//::::::::::::::::::::::::::::::Start Of Users:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+const users = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM users');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const userroles = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM  roles');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const detailsusers = async (req, res) => {
+    const id_users = req.params.id;
+    const sql = await executeQuery('SELECT * FROM users where id = ? ', [id_users]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+//::::::::::::::::::::::::::::::End Of Users :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //::::::::::::::::::::::::::::::Start Of Modules:::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 module.exports = {
     do_login,
     do_logout,
+    news,
+    news_details,
+    news_categories,
+    news_detailnewscategory,
+    news_photo,
+    news_video,
+    news_photodetail,
+    news_videodetail,
+    abouts,
+    detailabout,
+    users,
+    userroles,
+    detailsusers,
     dashboards,
 }
 //::::::::::::::::::::::::::::::End Of Module:::::::::::::::::::::::::::::::::::::::::::::::::::::

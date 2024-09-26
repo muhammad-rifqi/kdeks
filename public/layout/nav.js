@@ -147,4 +147,9 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
       var [key, value] = b;
       cookie[key.trim()] = value;
     }
-    document.getElementById("name").innerText = cookie["name"];
+    if(cookie['name'] == "" || cookie['name'] == undefined){
+      window.location.href = '/';
+    }else{
+      document.getElementById("name").innerText = cookie["name"];
+    }
+ 
