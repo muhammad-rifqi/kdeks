@@ -98,6 +98,14 @@ apps.get('/api_usersroles', db.userroles);
 
 apps.get('/api_detailusers/:id', db.detailsusers);
 
+apps.get('/api_agenda', db.agenda);
+
+apps.get('/api_detailagenda/:id', db.agendadetail);
+
+apps.get('/api_files', db.files);
+
+apps.get('/api_detail_files/:id', db.filesdetails);
+
 apps.post('/act_login', db.do_login);
 
 apps.get("/logout", db.do_logout);

@@ -195,6 +195,52 @@ const detailsusers = async (req, res) => {
 
 //::::::::::::::::::::::::::::::End Of Users :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
+//::::::::::::::::::::::::::::::Start Of Users :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+const agenda = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM  agendas');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const agendadetail = async (req, res) => {
+    const id_files = req.params.id;
+    const sql = await executeQuery('SELECT * FROM  agendas where id = ? ', [id_files]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+//::::::::::::::::::::::::::::::End Of Agenda :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+//::::::::::::::::::::::::::::::Start Of Files/Library :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+const files = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM  reports');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const filesdetails = async (req, res) => {
+    const id_files = req.params.id;
+    const sql = await executeQuery('SELECT * FROM  reports where id = ? ', [id_files]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+//::::::::::::::::::::::::::::::End Of Files/Library :::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 //::::::::::::::::::::::::::::::Start Of Modules:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 module.exports = {
@@ -213,6 +259,10 @@ module.exports = {
     users,
     userroles,
     detailsusers,
+    agenda,
+    agendadetail,
+    files,
+    filesdetails,
     dashboards,
 }
 //::::::::::::::::::::::::::::::End Of Module:::::::::::::::::::::::::::::::::::::::::::::::::::::
