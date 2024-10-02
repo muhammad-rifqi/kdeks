@@ -30,6 +30,14 @@ apps.get('/news', (req, res) => {
     res.sendFile(path.resolve('./views/news_management/news.html'));
 })
 
+apps.get('/news_add', (req, res) => {
+    res.sendFile(path.resolve('./views/news_management/news.html'));
+})
+
+apps.get('/news_edit', (req, res) => {
+    res.sendFile(path.resolve('./views/news_management/news.html'));
+})
+
 apps.get('/news_category', (req, res) => {
     res.sendFile(path.resolve('./views/news_management/news_category.html'));
 })
@@ -103,6 +111,10 @@ apps.get('/api_agenda', db.agenda);
 apps.get('/api_detailagenda/:id', db.agendadetail);
 
 apps.get('/api_files', db.files);
+
+apps.get('/api_about', db.abouts);
+
+apps.get('/api_detailabout/:id', db.detailabout);
 
 apps.get('/api_detail_files/:id', db.filesdetails);
 

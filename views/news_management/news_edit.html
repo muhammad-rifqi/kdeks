@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keyword" content="" />
+    <meta name="author" content="theme_ocean" />
+    <title>KNEKS BACKEND || Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/dataTables.bs5.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/select2-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/theme.min.css" />
+    <script type="text/javascript" src="//js.nicedit.com/nicEdit-latest.js"></script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(function () {
+            new nicEditor({ maxHeight: 100 }).panelInstance('editor1');
+            new nicEditor({ maxHeight: 100 }).panelInstance('editor2');
+            new nicEditor({ maxHeight: 100 }).panelInstance('editor3');
+            new nicEditor({ maxHeight: 100 }).panelInstance('editor4');
+        });
+    </script>
+</head>
+
+<body>
+    <!--! ================================================================ !-->
+    <!--! [Start] Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <script src="/nav.js"></script>
+    <!--! ================================================================ !-->
+    <!--! [End]  Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <!--! ================================================================ !-->
+    <!--! [Start] Header !-->
+    <!--! ================================================================ !-->
+    <script src="/header.js"></script>
+    <!--! ================================================================ !-->
+    <!--! [Start] Main Content !-->
+    <!--! ================================================================ !-->
+    <main class="nxl-container">
+        <div class="nxl-content">
+            <!-- [ page-header ] start -->
+            <script src="/breadchumb.js"></script>
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="/updatenews" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" id="id" value="">
+                            <div class="card stretch stretch-full">
+                                <div class="card-body lead-status">
+                                    <div class="mb-5 d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bold mb-0 me-4">
+                                            <span class="d-block mb-2">Edit News :</span>
+                                            <span class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
+                                                Edit
+                                                Data News Di Bawah Ini</span>
+                                        </h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Title Indonesia</label>
+                                            <input class="form-control" type="text" name="title" id="title">
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Title English</label>
+                                            <input class="form-control" type="text" name="title_en" id="title_en">
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">News Category</label>
+                                            <select class="form-control" name="news_category_id" id="newscatid">
+                                                <option value="0"> Choose </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Excerpt Indonesia</label>
+                                            <textarea class="form-control" name="excerpt"
+                                                id="editor1"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Excerpt English</label>
+                                            <textarea class="form-control" name="excerpt_en"
+                                                id="editor2"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Content Indonesia</label>
+                                            <textarea class="form-control" name="content"
+                                                id="editor3"></textarea>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Content English</label>
+                                            <textarea class="form-control" name="content_en"
+                                                id="editor4"></textarea>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Photo Preview</label>
+                                            <p id="preview"></p>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Photo</label>
+                                            <input class="form-control" name="photo" id="photo" type="file">
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Publish</label>
+                                            <input name="is_publish" id="is_publish" type="checkbox" value="1">
+                                            Publish
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Tanggal Publish</label>
+                                            <input class="form-control" name="news_datetime" id="news_datetime"
+                                                type="datetime-local">
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4 text-left">
+                                            <label class="form-label"></label>
+                                            <input class="btn btn-primary" type="submit" value="Simpan">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+        <!-- [ Footer ] start -->
+        <footer class="footer">
+            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+                <span>Copyright ©</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+            </div>
+        </footer>
+        <!-- [ Footer ] end -->
+    </main>
+
+    <script src="/assets/vendors/js/vendors.min.js"></script>
+    <script src="/assets/vendors/js/dataTables.min.js"></script>
+    <script src="/assets/vendors/js/dataTables.bs5.min.js"></script>
+    <script src="/assets/vendors/js/select2.min.js"></script>
+    <script src="/assets/vendors/js/select2-active.min.js"></script>
+    <script src="/assets/js/common-init.min.js"></script>
+    <script src="/assets/js/theme-customizer-init.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        window.addEventListener("load", async () => {
+            let news_category_id;
+            await getUrlById();
+            await getCategoryHotIssue();
+        })
+
+        function getUrlById() {
+            const URLS = new URL(window.location.href);
+            fetch('/newsdetail/' + URLS.pathname.split('/')[2])
+                .then(data => data.json())
+                .then((rows) => {
+                    document.getElementById("id").value = rows[0]?.id;
+                    document.getElementById("title").value = rows[0]?.title;
+                    document.getElementById("title_en").value = rows[0]?.title_en;
+                    // document.getElementById("val1").innerHTML = rows[0]?.excerpt;
+                    // document.getElementById("val2").innerHTML = rows[0]?.excerpt_en;
+                    // document.getElementById("val3").innerHTML = rows[0]?.content;
+                    // document.getElementById("val4").innerHTML = rows[0]?.content_en;
+                    nicEditors.findEditor( "editor1" ).setContent( rows[0]?.excerpt );
+                    nicEditors.findEditor( "editor2" ).setContent( rows[0]?.excerpt_en );
+                    nicEditors.findEditor( "editor3" ).setContent( rows[0]?.content );
+                    nicEditors.findEditor( "editor4" ).setContent( rows[0]?.content_en );
+                    news_category_id = rows[0]?.category_id;
+                    if (rows?.is_publish == 1) {
+                        document.getElementById("is_publish").setAttribute('checked', true);
+                    } else {
+                        document.getElementById("is_publish").setAttribute('checked', false);
+                    }
+                    document.getElementById("news_datetime").value = rows[0]?.news_datetime.split('.')[0];
+                    document.getElementById("preview").innerHTML = `<img src="https://webdev.rifhandi.com/uploads/news/${rows[0]?.image}" width="180"/>`;
+                })
+        }
+
+        function getCategoryHotIssue() {
+            fetch('/categories')
+                .then(response => response.json())
+                .then((data) => {
+                    data.forEach(element => {
+                        const ddd = document.createElement('option')
+                        if (element?.id == news_category_id) {
+                            ddd.value = `${element?.id}`;
+                            ddd.text = `${element?.title}`;
+                            ddd.selected = true;
+                        } else {
+                            ddd.value = `${element?.id}`;
+                            ddd.text = `${element?.title}`;
+                            ddd.selected = false;
+                        }
+                        document.getElementById("newscatid").append(ddd);
+                    });
+                })
+        }
+
+    </script>
+</body>
+
+</html>

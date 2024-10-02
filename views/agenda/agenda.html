@@ -5,55 +5,23 @@
   data-style="light">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <script src="layout/meta.js"></script>
 
-  <title>KDEKS - News</title>
+  <style>
+    div.dt-top-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
 
-  <meta name="description" content="" />
+    div.dt-center-in-div {
+      margin: 0 auto;
+    }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
+    div.dt-filter-spacer {
+      margin: 10px 0;
+    }
+  </style>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
-    rel="stylesheet" />
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="/assets/vendor/fonts/remixicon/remixicon.css" />
-  <link rel="stylesheet" href="/assets/vendor/fonts/flag-icons.css" />
-
-  <!-- Menu waves for no-customizer fix -->
-  <link rel="stylesheet" href="/assets/vendor/libs/node-waves/node-waves.css" />
-
-  <!-- Core CSS -->
-  <link rel="stylesheet" href="/assets/vendor/css/rtl/core.css" />
-  <link rel="stylesheet" href="/assets/vendor/css/rtl/theme-default.css" />
-  <link rel="stylesheet" href="/assets/css/demo.css" />
-
-  <!-- Vendors CSS -->
-  <link rel="stylesheet" href="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-  <link rel="stylesheet" href="/assets/vendor/libs/typeahead-js/typeahead.css" />
-  <link rel="stylesheet" href="/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-  <link rel="stylesheet" href="/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-  <link rel="stylesheet" href="/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-  <link rel="stylesheet" href="/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-  <link rel="stylesheet" href="/assets/vendor/libs/flatpickr/flatpickr.css" />
-  <!-- Row Group CSS -->
-  <link rel="stylesheet" href="/assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css" />
-  <!-- Form Validation -->
-  <link rel="stylesheet" href="/assets/vendor/libs/@form-validation/form-validation.css" />
-
-  <!-- Page CSS -->
-
-  <!-- Helpers -->
-  <script src="/assets/vendor/js/helpers.js"></script>
-  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -61,83 +29,15 @@
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
       <!-- Menu -->
-
       <script src="/layout/nav.js"></script>
+
       <!-- / Menu -->
 
       <!-- Layout container -->
       <div class="layout-page">
         <!-- Navbar -->
 
-        <nav
-          class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-          id="layout-navbar">
-          <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
-            <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
-              <i class="ri-menu-fill ri-22px"></i>
-            </a>
-          </div>
-
-          <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-            <!-- Search -->
-            <div class="navbar-nav align-items-center">
-              <div class="nav-item navbar-search-wrapper mb-0">
-                <a class="nav-item nav-link search-toggler fw-normal px-0" href="javascript:void(0);">
-                  <i class="ri-search-line ri-22px scaleX-n1-rtl me-3"></i>
-                  <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
-                </a>
-              </div>
-            </div>
-            <!-- /Search -->
-
-            <ul class="navbar-nav flex-row align-items-center ms-auto">
-              <!-- User -->
-              <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                  <div class="avatar avatar-online">
-                    <img src="/assets/img/avatars/1.png" alt class="rounded-circle" />
-                  </div>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li>
-                    <a class="dropdown-item" href="pages-account-settings-account.html">
-                      <div class="d-flex">
-                        <div class="flex-shrink-0 me-2">
-                          <div class="avatar avatar-online">
-                            <img src="/assets/img/avatars/1.png" alt class="rounded-circle" />
-                          </div>
-                        </div>
-                        <div class="flex-grow-1">
-                          <span class="fw-medium d-block small">John Doe</span>
-                          <small class="text-muted">Admin</small>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                  <li>
-                    <div class="d-grid px-4 pt-2 pb-1">
-                      <a class="btn btn-sm btn-danger d-flex" href="auth-login-cover.html" target="_blank">
-                        <small class="align-middle">Logout</small>
-                        <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!--/ User -->
-            </ul>
-          </div>
-
-          <!-- Search Small Screens -->
-          <div class="navbar-search-wrapper search-input-wrapper d-none">
-            <input type="text" class="form-control search-input container-xxl border-0" placeholder="Search..."
-              aria-label="Search..." />
-            <i class="ri-close-fill search-toggler cursor-pointer"></i>
-          </div>
-        </nav>
+        <script src="/layout/nav2.js"></script>
 
         <!-- / Navbar -->
 
@@ -148,92 +48,24 @@
           <div class="container-xxl flex-grow-1 container-p-y">
             <!-- DataTable with Buttons -->
             <div class="card">
-              <div class="card-datatable table-responsive pt-0">
-                <table class="datatables-basic table table-bordered">
+              <div class="card-datatable table-responsive p-5">
+                <table id="news" class="display" style="width: 100%;">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th></th>
-                      <th>id</th>
-                      <th>Title (Indonesia)</th>
-                      <th>Title (English)</th>
-                      <th>Category</th>
-                      <th>Published Time</th>
-                      <th>Published</th>
-                      <th>Action</th>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Title EN</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
+                  <tbody>
+                  </tbody>
                 </table>
+
               </div>
             </div>
             <!-- Modal to add new record -->
-            <div class="offcanvas offcanvas-end" id="add-new-record">
-              <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title" id="exampleModalLabel">New Record</h5>
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                  aria-label="Close"></button>
-              </div>
-              <div class="offcanvas-body flex-grow-1">
-                <form class="add-new-record pt-0 row g-3" id="form-add-new-record" onsubmit="return false">
-                  <div class="col-sm-12">
-                    <div class="input-group input-group-merge">
-                      <span id="basicFullname2" class="input-group-text"><i class="ri-user-line ri-18px"></i></span>
-                      <div class="form-floating form-floating-outline">
-                        <input type="text" id="basicFullname" class="form-control dt-full-name" name="basicFullname"
-                          placeholder="John Doe" aria-label="John Doe" aria-describedby="basicFullname2" />
-                        <label for="basicFullname">Full Name</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="input-group input-group-merge">
-                      <span id="basicPost2" class="input-group-text"><i class="ri-briefcase-line ri-18px"></i></span>
-                      <div class="form-floating form-floating-outline">
-                        <input type="text" id="basicPost" name="basicPost" class="form-control dt-post"
-                          placeholder="Web Developer" aria-label="Web Developer" aria-describedby="basicPost2" />
-                        <label for="basicPost">Post</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="input-group input-group-merge">
-                      <span class="input-group-text"><i class="ri-mail-line ri-18px"></i></span>
-                      <div class="form-floating form-floating-outline">
-                        <input type="text" id="basicEmail" name="basicEmail" class="form-control dt-email"
-                          placeholder="john.doe@example.com" aria-label="john.doe@example.com" />
-                        <label for="basicEmail">Email</label>
-                      </div>
-                    </div>
-                    <div class="form-text">You can use letters, numbers & periods</div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="input-group input-group-merge">
-                      <span id="basicDate2" class="input-group-text"><i class="ri-calendar-2-line ri-18px"></i></span>
-                      <div class="form-floating form-floating-outline">
-                        <input type="text" class="form-control dt-date" id="basicDate" name="basicDate"
-                          aria-describedby="basicDate2" placeholder="MM/DD/YYYY" aria-label="MM/DD/YYYY" />
-                        <label for="basicDate">Joining Date</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <div class="input-group input-group-merge">
-                      <span id="basicSalary2" class="input-group-text"><i
-                          class="ri-money-dollar-circle-line ri-18px"></i></span>
-                      <div class="form-floating form-floating-outline">
-                        <input type="number" id="basicSalary" name="basicSalary" class="form-control dt-salary"
-                          placeholder="12000" aria-label="12000" aria-describedby="basicSalary2" />
-                        <label for="basicSalary">Salary</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-12">
-                    <button type="submit" class="btn btn-primary data-submit me-sm-4 me-1">Submit</button>
-                    <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">Cancel</button>
-                  </div>
-                </form>
-              </div>
-            </div>
+
             <!--/ DataTable with Buttons -->
 
           </div>
@@ -271,35 +103,61 @@
   </div>
   <!-- / Layout wrapper -->
 
-  <!-- Core JS -->
-  <!-- build:js /assets/vendor/js/core.js -->
-  <script src="/assets/vendor/libs/jquery/jquery.js"></script>
-  <script src="/assets/vendor/libs/popper/popper.js"></script>
-  <script src="/assets/vendor/js/bootstrap.js"></script>
-  <script src="/assets/vendor/libs/node-waves/node-waves.js"></script>
-  <script src="/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  <script src="/assets/vendor/libs/hammer/hammer.js"></script>
-  <script src="/assets/vendor/libs/i18n/i18n.js"></script>
-  <script src="/assets/vendor/libs/typeahead-js/typeahead.js"></script>
-  <script src="/assets/vendor/js/menu.js"></script>
+  <script src="/layout/footer.js"></script>  
+  
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 2. Inisialisasi DataTable
+      $('#news').DataTable({
+        "ajax": {
+          "url": "/api_agenda",
+          "dataSrc": ""
+        },
+        "columns": [
+          { "data": "id" },
+          { "data": "title" },
+          { "data": "title_en" },
+          {
+            "data": null,
+            "render": function (data, type, row) {
+              return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
+                                <button class='delete-btn btn btn-danger' data-id='${row.id}' data-foto='${row.image}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
+            }
+          }
+        ],
+        lengthMenu: [10, 25, 50, 100],
+        dom: '<"dt-top-container"<l><"dt-center-in-div"B><f>r>t<"dt-filter-spacer"f><ip>',
+        buttons: [
+          'copy',
+          'csv',
+          'excel',
+          'pdf',
+          'print'
+        ],
+      });
 
-  <!-- endbuild -->
+      $('#news').on('click', '.edit-btn', function () {
+        var id = $(this).data('id');
+        window.location.href = '/n_edit/' + id;
+      });
 
-  <!-- Vendors JS -->
-  <script src="/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-  <!-- Flat Picker -->
-  <script src="/assets/vendor/libs/moment/moment.js"></script>
-  <script src="/assets/vendor/libs/flatpickr/flatpickr.js"></script>
-  <!-- Form Validation -->
-  <script src="/assets/vendor/libs/@form-validation/popular.js"></script>
-  <script src="/assets/vendor/libs/@form-validation/bootstrap5.js"></script>
-  <script src="/assets/vendor/libs/@form-validation/auto-focus.js"></script>
+      $('#news').on('click', '.delete-btn', function () {
+        var id = $(this).data('id');
+        var foto = $(this).data('foto');
+        if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
+          window.location.href = '/deletenews/' + id + '/' + foto;
+        }
+      });
+    });
+  </script>
 
-  <!-- Main JS -->
-  <script src="/assets/js/main.js"></script>
-
-  <!-- Page JS -->
-  <script src="/assets/js/tables-datatables-basic.js"></script>
 </body>
 
 </html>
