@@ -31,11 +31,11 @@ apps.get('/news', (req, res) => {
 })
 
 apps.get('/news_add', (req, res) => {
-    res.sendFile(path.resolve('./views/news_management/news.html'));
+    res.sendFile(path.resolve('./views/news_management/news_add.html'));
 })
 
-apps.get('/news_edit', (req, res) => {
-    res.sendFile(path.resolve('./views/news_management/news.html'));
+apps.get('/news_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/news_management/news_edit.html'));
 })
 
 apps.get('/news_category', (req, res) => {
