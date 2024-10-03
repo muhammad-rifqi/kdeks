@@ -46,6 +46,9 @@
           <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y">
+            <p> 
+              <button class="btn btn-primary" onclick="window.location.href='/users_add'"> Tambah </button> 
+           </p>
             <!-- DataTable with Buttons -->
             <div class="card">
               <div class="card-datatable table-responsive p-5">
@@ -129,8 +132,7 @@
           {
             "data": null,
             "render": function (data, type, row) {
-              return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
-                                <button class='delete-btn btn btn-danger' data-id='${row.id}' data-foto='${row.image}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
+              return `<p><button class='delete-btn btn btn-danger' data-id='${row.id}' data-foto='${row.image}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
             }
           }
         ],
@@ -145,11 +147,7 @@
         ],
       });
 
-      $('#news').on('click', '.edit-btn', function () {
-        var id = $(this).data('id');
-        window.location.href = '/n_edit/' + id;
-      });
-
+     
       $('#news').on('click', '.delete-btn', function () {
         var id = $(this).data('id');
         var foto = $(this).data('foto');

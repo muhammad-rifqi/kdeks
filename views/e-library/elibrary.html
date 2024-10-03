@@ -46,6 +46,9 @@
           <!-- Content -->
 
           <div class="container-xxl flex-grow-1 container-p-y">
+            <p> 
+              <button class="btn btn-primary" onclick="window.location.href='/elibrary_add'"> Tambah </button> 
+           </p>
             <!-- DataTable with Buttons -->
             <div class="card">
               <div class="card-datatable table-responsive p-5">
@@ -146,14 +149,14 @@
 
       $('#news').on('click', '.edit-btn', function () {
         var id = $(this).data('id');
-        window.location.href = '/n_edit/' + id;
+        window.location.href = '/elibrary_edit/' + id;
       });
 
       $('#news').on('click', '.delete-btn', function () {
         var id = $(this).data('id');
         var foto = $(this).data('foto');
         if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
-          window.location.href = '/deletenews/' + id + '/' + foto;
+          window.location.href = '/elibrary_delete/' + id + '/' + foto;
         }
       });
     });

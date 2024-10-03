@@ -264,6 +264,25 @@ const filesdetails = async (req, res) => {
     }
 }
 
+const files_category = async (req, res) => {
+    const sql = await executeQuery('SELECT * FROM  report_categories');
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const files_category_details = async (req, res) => {
+    const id_files_category = req.params.id;
+    const sql = await executeQuery('SELECT * FROM  report_categories where id = ? ', [id_files_category]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
 //::::::::::::::::::::::::::::::End Of Files/Library :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //::::::::::::::::::::::::::::::Start Of Modules:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -288,6 +307,8 @@ module.exports = {
     agendadetail,
     files,
     filesdetails,
+    files_category,
+    files_category_details,
     dashboards,
 }
 //::::::::::::::::::::::::::::::End Of Module:::::::::::::::::::::::::::::::::::::::::::::::::::::

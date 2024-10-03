@@ -54,8 +54,16 @@ apps.get('/tentangkami', (req, res) => {
     res.sendFile(path.resolve('./views/profile/tentangkami.html'));
 })
 
+apps.get('/tentangkami_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/tentangkami_edit.html'));
+})
+
 apps.get('/sejarah', (req, res) => {
     res.sendFile(path.resolve('./views/profile/sejarah.html'));
+})
+
+apps.get('/sejarah_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/sejarah_edit.html'));
 })
 
 apps.get('/sk', (req, res) => {
@@ -66,12 +74,36 @@ apps.get('/video', (req, res) => {
     res.sendFile(path.resolve('./views/profile/video.html'));
 })
 
+apps.get('/video_add', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/video_add.html'));
+})
+
+apps.get('/video_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/video_edit.html'));
+})
+
 apps.get('/photo', (req, res) => {
     res.sendFile(path.resolve('./views/profile/photos.html'));
 })
 
+apps.get('/photo_add', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/photos_add.html'));
+})
+
+apps.get('/photo_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/photos_edit.html'));
+})
+
 apps.get('/agenda', (req, res) => {
     res.sendFile(path.resolve('./views/agenda/agenda.html'));
+})
+
+apps.get('/agenda_add', (req, res) => {
+    res.sendFile(path.resolve('./views/agenda/agenda_add.html'));
+})
+
+apps.get('/agenda_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/agenda/agenda_edit.html'));
 })
 
 apps.get('/home_management', (req, res) => {
@@ -82,8 +114,20 @@ apps.get('/elibrary', (req, res) => {
     res.sendFile(path.resolve('./views/e-library/elibrary.html'));
 })
 
+apps.get('/elibrary_add', (req, res) => {
+    res.sendFile(path.resolve('./views/e-library/elibrary_add.html'));
+})
+
+apps.get('/elibrary_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/e-library/elibrary_edit.html'));
+})
+
 apps.get('/users', (req, res) => {
     res.sendFile(path.resolve('./views/user_management/users.html'));
+})
+
+apps.get('/users_add', (req, res) => {
+    res.sendFile(path.resolve('./views/user_management/users_add.html'));
 })
 
 apps.get('/opini', (req, res) => {
@@ -120,11 +164,15 @@ apps.get('/api_detailagenda/:id', db.agendadetail);
 
 apps.get('/api_files', db.files);
 
+apps.get('/api_detail_files/:id', db.filesdetails);
+
+apps.get('/api_files_category', db.files_category);
+
+apps.get('/api_files_detail_category/:id', db.files_category_details);
+
 apps.get('/api_about', db.abouts);
 
 apps.get('/api_detailabout/:id', db.detailabout);
-
-apps.get('/api_detail_files/:id', db.filesdetails);
 
 apps.post('/act_login', db.do_login);
 

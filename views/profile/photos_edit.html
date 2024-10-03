@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr"
+    data-theme="theme-default" data-/assets-path="/assets/" data-template="vertical-menu-template-no-customizer"
+    data-style="light">
+
+<head>
+    <script src="/layout/meta.js"></script>
+
+    <style>
+        div.dt-top-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        div.dt-center-in-div {
+            margin: 0 auto;
+        }
+
+        div.dt-filter-spacer {
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <script src="/layout/nav.js"></script>
+
+            <!-- / Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <script src="/layout/nav2.js"></script>
+
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <!-- DataTable with Buttons -->
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form action="/updatephoto" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" id="id" value="">
+                                        <div class="card stretch stretch-full">
+                                            <div class="card-body lead-status">
+                                                <div class="mb-5 d-flex align-items-center justify-content-between">
+                                                    <h5 class="fw-bold mb-0 me-4">
+                                                        <span class="d-block mb-2">Edit Photo :</span>
+                                                        <span
+                                                            class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
+                                                            Edit
+                                                            Data Photo Issue Di Bawah Ini</span>
+                                                    </h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Title Indonesia</label>
+                                                        <input class="form-control" type="text" name="title" id="title">
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Title English</label>
+                                                        <input class="form-control" type="text" name="title_en"
+                                                            id="title_en">
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Content Indonesia</label>
+                                                        <textarea class="form-control" name="content"
+                                                            id="editor3"><p id="val3"></p></textarea>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Content English</label>
+                                                        <textarea class="form-control" name="content_en"
+                                                            id="editor4"><p id="val4"></p></textarea>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Photo Preview</label>
+                                                        <p id="preview"></p>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Photo</label>
+                                                        <input class="form-control" name="photo" id="photo" type="file">
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Tanggal Publish</label>
+                                                        <input class="form-control" name="news_datetime"
+                                                            id="news_datetime" type="datetime-local">
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4 text-left">
+                                                        <label class="form-label"></label>
+                                                        <button class="btn btn-primary" type="submit">Simpan</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal to add new record -->
+
+                    <!--/ DataTable with Buttons -->
+
+                </div>
+                <!-- / Content -->
+
+                <!-- Footer -->
+                <footer class="content-footer footer bg-footer-theme">
+                    <div class="container-xxl">
+                        <div
+                            class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                            <div class="text-body mb-2 mb-md-0">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                KDEKS
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- / Footer -->
+
+                <div class="content-backdrop fade"></div>
+            </div>
+            <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <script src="/layout/footer.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+    <script>
+        window.addEventListener("load", async () => {
+            await getUrlById();
+        })
+
+        function getUrlById() {
+            const URLS = new URL(window.location.href);
+            fetch('/api_detail_newsphoto/' + URLS.pathname.split('/')[2])
+                .then(data => data.json())
+                .then((rows) => {
+                    document.getElementById("id").value = rows[0]?.id;
+                    document.getElementById("title").value = rows[0]?.title;
+                    document.getElementById("title_en").value = rows[0]?.title_en;
+                    document.getElementById("editor3").innerHTML = rows[0]?.content;
+                    document.getElementById("editor4").innerHTML = rows[0]?.content_en;
+                    document.getElementById("news_datetime").value = rows[0]?.news_datetime.split('.')[0];
+                    document.getElementById("preview").innerHTML = `<img src="https://webdev.rifhandi.com/uploads/photo/${rows[0]?.photo}" width="180"/>`;
+                })
+        }
+    </script>
+
+</body>
+
+</html>

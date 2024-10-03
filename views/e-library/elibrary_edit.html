@@ -50,17 +50,17 @@
                         <div class="card">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form action="/updatetentangkami" method="post">
+                                    <form action="/updatefileupload" method="post" enctype="multipart/form-data">
                                         <input type="hidden" name="id" id="id" value="">
                                         <div class="card stretch stretch-full">
                                             <div class="card-body lead-status">
                                                 <div class="mb-5 d-flex align-items-center justify-content-between">
                                                     <h5 class="fw-bold mb-0 me-4">
-                                                        <span class="d-block mb-2">Edit Tentang Kami:</span>
+                                                        <span class="d-block mb-2">Edit Files :</span>
                                                         <span
                                                             class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
                                                             Edit
-                                                            Data Tentang Kami Di Bawah Ini</span>
+                                                            Data Files Di Bawah Ini</span>
                                                     </h5>
                                                 </div>
                                                 <div class="row">
@@ -74,26 +74,51 @@
                                                         <input class="form-control" type="text" name="title_en"
                                                             id="title_en" required>
                                                     </div>
-
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Files Category</label>
+                                                        <select class="form-control" name="file_category_id"
+                                                            id="file_category_id" required>
+                                                            <option value="0"> Choose </option>
+                                                        </select>
+                                                    </div>
                                                     <div class="col-lg-12 mb-4">
                                                         <label class="form-label">Content Indonesia</label>
-                                                        <textarea class="form-control" name="content" id="editor3"
-                                                            required><p id="val3"></p></textarea>
+                                                        <textarea class="form-control" name="content"
+                                                            id="editor3"></textarea>
                                                     </div>
                                                     <div class="col-lg-12 mb-4">
                                                         <label class="form-label">Content English</label>
-                                                        <textarea class="form-control" name="content_en" id="editor4"
-                                                            required><p id="val4"></p></textarea>
+                                                        <textarea class="form-control" name="content_en"
+                                                            id="editor4"></textarea>
                                                     </div>
 
                                                     <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Tag</label>
-                                                        <input type="text" class="form-control" name="tag" id="tag" />
+                                                        <label class="form-label">URL Filesupload</label>
+                                                        <p id="previews"></p>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">File Upload</label>
+                                                        <input class="form-control" name="file_data" id="file_data"
+                                                            type="file" accept="application/pdf" required>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Publish</label>
+                                                        <input name="is_publish" id="is_publish" type="checkbox"
+                                                            value="1" required>
+                                                        Publish
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Tanggal Publish</label>
+                                                        <input class="form-control" name="date" id="date"
+                                                            type="datetime-local" required>
                                                     </div>
 
                                                     <div class="col-lg-12 mb-4 text-left">
                                                         <label class="form-label"></label>
-                                                        <input class="btn btn-primary" type="submit" value="Simpan">
+                                                        <button class="btn btn-primary" type="submit">Simpan</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -103,7 +128,9 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Modal to add new record -->
 
+                    <!--/ DataTable with Buttons -->
 
                 </div>
                 <!-- / Content -->
@@ -149,6 +176,51 @@
     <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+    <script>
+        window.addEventListener("load", async () => {
+            let file_category_id;
+            await getUrlById();
+            await getCategory();
+        })
+
+        function getUrlById() {
+            const URLS = new URL(window.location.href);
+            fetch('/api_detail_files/' + URLS.pathname.split('/')[2])
+                .then(data => data.json())
+                .then((rows) => {
+                    document.getElementById("id").value = rows[0]?.id;
+                    document.getElementById("title").value = rows[0]?.title;
+                    document.getElementById("title_en").value = rows[0]?.title_en;
+                    document.getElementById("editor3").innerHTML = rows[0]?.content;
+                    document.getElementById("editor4").innerHTML = rows[0]?.content_en;
+                    file_category_id = rows[0]?.report_category_id;
+                    if (rows?.is_publish == 1) {
+                        document.getElementById("is_publish").setAttribute('checked', true);
+                    } else {
+                        document.getElementById("is_publish").setAttribute('checked', false);
+                    }
+                    document.getElementById("date").value = rows[0]?.date.split('.')[0];
+                    document.getElementById("previews").innerHTML = `https://webdev.rifhandi.com/uploads/fileupload/${rows[0]?.file}`;
+                })
+        }
+
+        function getCategory() {
+            fetch('/api_files_category')
+                .then(response => response.json())
+                .then((data) => {
+                    data.forEach(element => {
+                        const choosed = (element?.id == file_category_id) ? true : false;
+                        const ddd = document.createElement('option')
+                        ddd.value = `${element?.id}`;
+                        ddd.text = `${element?.title}`;
+                        ddd.selected = choosed
+                        document.getElementById("file_category_id").append(ddd);
+                    });
+                })
+        }
+
+    </script>
 
 </body>
 

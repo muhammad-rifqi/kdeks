@@ -1,0 +1,186 @@
+<!doctype html>
+
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr"
+    data-theme="theme-default" data-/assets-path="/assets/" data-template="vertical-menu-template-no-customizer"
+    data-style="light">
+
+<head>
+    <script src="/layout/meta.js"></script>
+
+    <style>
+        div.dt-top-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+
+        div.dt-center-in-div {
+            margin: 0 auto;
+        }
+
+        div.dt-filter-spacer {
+            margin: 10px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <script src="/layout/nav.js"></script>
+
+            <!-- / Menu -->
+
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <script src="/layout/nav2.js"></script>
+
+                <!-- / Navbar -->
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <!-- DataTable with Buttons -->
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form action="/insertfiles" method="post" enctype="multipart/form-data">
+                                        <div class="card stretch stretch-full">
+                                            <div class="card-body lead-status">
+                                                <div class="mb-5 d-flex align-items-center justify-content-between">
+                                                    <h5 class="fw-bold mb-0 me-4">
+                                                        <span class="d-block mb-2">Tambah Files :</span>
+                                                        <span
+                                                            class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
+                                                            Tambah
+                                                            Data Files Di Bawah Ini</span>
+                                                    </h5>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Title Indonesia</label>
+                                                        <input class="form-control" type="text" name="title" required>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Title English</label>
+                                                        <input class="form-control" type="text" name="title_en"
+                                                            required>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Files Category</label>
+                                                        <select class="form-control" name="file_category_id"
+                                                            id="file_category_id" required>
+                                                            <option value="0"> Choose </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Content Indonesia</label>
+                                                        <textarea class="form-control" name="content"
+                                                            id="editor3"></textarea>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Content English</label>
+                                                        <textarea class="form-control" name="content_en"
+                                                            id="editor4"></textarea>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Files</label>
+                                                        <input class="form-control" name="file_data" id="file_data"
+                                                            type="file" accept="application/pdf" required>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Publish</label>
+                                                        <input name="is_publish" id="is_publish" type="checkbox"
+                                                            value="1" required>
+                                                        Publish
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Tanggal Publish</label>
+                                                        <input class="form-control" name="date" id="date" type="date"
+                                                            required>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4 text-left">
+                                                        <label class="form-label"></label>
+                                                        <button class="btn btn-primary" type="submit">Simpan</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- / Content -->
+
+                <!-- Footer -->
+                <footer class="content-footer footer bg-footer-theme">
+                    <div class="container-xxl">
+                        <div
+                            class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                            <div class="text-body mb-2 mb-md-0">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                KDEKS
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- / Footer -->
+
+                <div class="content-backdrop fade"></div>
+            </div>
+            <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <script src="/layout/footer.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script>
+        window.addEventListener("load", async () => {
+            await fetch('/api_files_category')
+                .then(response => response.json())
+                .then((data) => {
+                    data.forEach(element => {
+                        const ddd = document.createElement('option')
+                        ddd.value = `${element?.id}`;
+                        ddd.text = `${element?.title}`;
+                        document.getElementById("file_category_id").append(ddd);
+                    });
+                })
+        })
+    </script>
+
+</body>
+
+</html>

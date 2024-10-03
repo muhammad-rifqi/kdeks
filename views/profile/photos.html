@@ -47,7 +47,11 @@
 
           <div class="container-xxl flex-grow-1 container-p-y">
             <!-- DataTable with Buttons -->
+            <p> 
+              <button class="btn btn-primary" onclick="window.location.href='/photo_add'"> Tambah </button> 
+           </p>
             <div class="card">
+             
               <div class="card-datatable table-responsive p-5">
                 <table id="news" class="display" style="width: 100%;">
                   <thead>
@@ -145,7 +149,7 @@
 
       $('#news').on('click', '.edit-btn', function () {
         var id = $(this).data('id');
-        window.location.href = '/n_edit/' + id;
+        window.location.href = '/photo_edit/' + id;
       });
 
       $('#news').on('click', '.delete-btn', function () {
