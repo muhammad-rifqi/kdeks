@@ -42,6 +42,14 @@ apps.get('/news_category', (req, res) => {
     res.sendFile(path.resolve('./views/news_management/news_category.html'));
 })
 
+apps.get('/news_category_add', (req, res) => {
+    res.sendFile(path.resolve('./views/news_management/news_category_add.html'));
+})
+
+apps.get('/news_category_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/news_management/news_category_edit.html'));
+})
+
 apps.get('/tentangkami', (req, res) => {
     res.sendFile(path.resolve('./views/profile/tentangkami.html'));
 })

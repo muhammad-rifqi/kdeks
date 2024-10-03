@@ -145,14 +145,14 @@
 
       $('#news').on('click', '.edit-btn', function () {
         var id = $(this).data('id');
-        window.location.href = '/n_edit/' + id;
+        window.location.href = '/news_category_edit/' + id;
       });
 
       $('#news').on('click', '.delete-btn', function () {
         var id = $(this).data('id');
         var foto = $(this).data('foto');
         if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
-          window.location.href = '/deletenews/' + id + '/' + foto;
+          window.location.href = '/deletenews_category/' + id + '/' + foto;
         }
       });
     });

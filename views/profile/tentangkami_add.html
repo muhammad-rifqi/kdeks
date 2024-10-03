@@ -50,74 +50,93 @@
                         <div class="card">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form action="/insertnewscategory" method="post">
+                                    <form action="/updatetentangkami" method="post">
+                                        <input type="hidden" name="id" id="id" value="">
                                         <div class="card stretch stretch-full">
                                             <div class="card-body lead-status">
                                                 <div class="mb-5 d-flex align-items-center justify-content-between">
                                                     <h5 class="fw-bold mb-0 me-4">
-                                                        <span class="d-block mb-2">Tambah News Category :</span>
+                                                        <span class="d-block mb-2">Edit Tentang Kami:</span>
                                                         <span
                                                             class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
-                                                            Tambah
-                                                            Data News Category Di Bawah Ini</span>
+                                                            Edit
+                                                            Data Tentang Kami Di Bawah Ini</span>
                                                     </h5>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Categories Indonesia*</label>
+                                                        <label class="form-label">Title Indonesia</label>
                                                         <input class="form-control" type="text" name="title" id="title"
                                                             required>
                                                     </div>
                                                     <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Categories English</label>
+                                                        <label class="form-label">Title English</label>
                                                         <input class="form-control" type="text" name="title_en"
                                                             id="title_en" required>
                                                     </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Content Indonesia</label>
+                                                        <textarea class="form-control" name="content" id="editor3"
+                                                            required><p id="val3"></p></textarea>
+                                                    </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Content English</label>
+                                                        <textarea class="form-control" name="content_en" id="editor4"
+                                                            required><p id="val4"></p></textarea>
+                                                    </div>
+
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Tag</label>
+                                                        <input type="text" class="form-control" name="tag" id="tag" />
+                                                    </div>
+
                                                     <div class="col-lg-12 mb-4 text-left">
                                                         <label class="form-label"></label>
-                                                        <button class="btn btn-primary" type="submit">Simpan</button>
+                                                        <input class="btn btn-primary" type="submit" value="Simpan">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
                                 </div>
+                                </form>
                             </div>
                         </div>
-                      
-
                     </div>
-                    <!-- / Content -->
 
-                    <!-- Footer -->
-                    <footer class="content-footer footer bg-footer-theme">
-                        <div class="container-xxl">
-                            <div
-                                class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                                <div class="text-body mb-2 mb-md-0">
-                                    ©
-                                    <script>
-                                        document.write(new Date().getFullYear());
-                                    </script>
-                                    KDEKS
-                                </div>
+
+                </div>
+                <!-- / Content -->
+
+                <!-- Footer -->
+                <footer class="content-footer footer bg-footer-theme">
+                    <div class="container-xxl">
+                        <div
+                            class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                            <div class="text-body mb-2 mb-md-0">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                                KDEKS
                             </div>
                         </div>
-                    </footer>
-                    <!-- / Footer -->
+                    </div>
+                </footer>
+                <!-- / Footer -->
 
-                    <div class="content-backdrop fade"></div>
-                </div>
-                <!-- Content wrapper -->
+                <div class="content-backdrop fade"></div>
             </div>
-            <!-- / Layout page -->
+            <!-- Content wrapper -->
         </div>
+        <!-- / Layout page -->
+    </div>
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
 
-        <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-        <div class="drag-target"></div>
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
     </div>
     <!-- / Layout wrapper -->
 
