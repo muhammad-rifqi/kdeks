@@ -18,6 +18,17 @@ apps.use(
 apps.use(cors());
 apps.use(express.static('public'));
 
+const multer = require('multer')
+let storages = multer.diskStorage(
+    {
+        destination: './public/uploads/news/',
+        filename: function (req, file, cb) {
+            cb(null, file.originalname.replace(" ",""));
+        }
+    }
+);
+let news_path = multer({ storage: storages });
+
 apps.get('/', (req, res) => {
     res.sendFile(path.resolve('./views/login.html'));
 })
@@ -139,6 +150,8 @@ apps.get('/opini', (req, res) => {
 apps.get('/api_news', db.news);
 
 apps.get('/api_news_detail/:id', db.news_details);
+
+apps.post('/insertnews', news_path.single('photo'), db.insertnews);
 
 apps.get('/api_newscategory', db.news_categories);
 

@@ -121,6 +121,26 @@ const news_detailnewscategory = async (req, res) => {
     }
 }
 
+
+const insertnews = async (req, res) => {
+    const today = new Date();
+    const month = (today.getMonth() + 1);
+    const mmm = month.length < 2 ? "0" + month : month;
+    const date = today.getFullYear() + '-' + mmm + '-' + today.getDate();
+    const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    const timeupdate = date + ' ' + time;
+    const news_datetime = req.body.news_datetime.replace("T", " ");
+    const fileupload = req.file.originalname.replace(" ", "");
+    const sql = await executeQuery("insert into news(title,title_en,excerpt,excerpt_en,content,content_en,image,is_publish,news_datetime,created_at,updated_at,deleted_at,category_id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.excerpt, req.body.excerpt_en, req.body.content, req.body.content_en, fileupload, req.body.is_publish, news_datetime, timeupdate, timeupdate, null, req.body.category_id]);
+    if (sql) {
+        res.redirect('/n');
+    } else {
+        console.log(sql);
+        res.redirect('/n');
+    }
+}
+
 //::::::::::::::::::::::::::::::End Of Categories :::::::::::::::::::::::::::::::::::::::::::::::::::::
 //::::::::::::::::::::::::::::::Start Of Abouts:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -291,6 +311,7 @@ module.exports = {
     do_login,
     do_logout,
     news,
+    insertnews,
     news_details,
     news_categories,
     news_detailnewscategory,
