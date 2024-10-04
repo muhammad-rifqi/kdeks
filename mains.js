@@ -28,6 +28,26 @@ let storages = multer.diskStorage(
     }
 );
 let news_path = multer({ storage: storages });
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+let disks = multer.diskStorage(
+    {
+        destination: './public/uploads/photo/',
+        filename: function (req, file, cb) {
+            cb(null, file.originalname.replace(" ",""));
+        }
+    }
+);
+let photo_path = multer({ storage: disks });
+//::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+let drives = multer.diskStorage(
+    {
+        destination: './public/uploads/filesupload/',
+        filename: function (req, file, cb) {
+            cb(null, file.originalname.replace(" ",""));
+        }
+    }
+);
+let files_path = multer({ storage: drives });
 
 apps.get('/', (req, res) => {
     res.sendFile(path.resolve('./views/login.html'));
@@ -161,6 +181,12 @@ apps.get('/api_detailnewscategory/:id', db.news_detailnewscategory);
 
 apps.get('/api_newsphoto', db.news_photo);
 
+apps.get('/deletephoto/:id/:foto' , db.deletephoto);
+
+apps.post('/insertphoto', photo_path.single('photo'), db.insertphoto);
+
+apps.post('/updatephoto', photo_path.single('photo'), db.updatephoto);
+
 apps.get('/api_newsvideo', db.news_video);
 
 apps.get('/api_detail_newsphoto/:id', db.news_photodetail);
@@ -184,6 +210,12 @@ apps.get('/api_detail_files/:id', db.filesdetails);
 apps.get('/api_files_category', db.files_category);
 
 apps.get('/api_files_detail_category/:id', db.files_category_details);
+
+apps.post('/insertfiles', files_path.single('file_data'), db.insertfileupload);
+
+apps.post('/updatefileupload', files_path.single('file_data'), db.updatefileupload);
+
+apps.get('/deletefilesupload/:id/:file' , db.deletefileupload);
 
 apps.get('/api_about', db.abouts);
 

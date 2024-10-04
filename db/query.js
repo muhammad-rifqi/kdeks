@@ -549,7 +549,82 @@ const files_category_details = async (req, res) => {
     }
 }
 
+const insertfileupload = async (req, res) => {
+    const today = new Date();
+    const month = (today.getMonth() + 1);
+    const mmm = month.length < 2 ? "0" + month : month;
+    const date = today.getFullYear() + '-' + mmm + '-' + today.getDate();
+    const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    const timeupdate = date + ' ' + time;
+    const file_date = req.body.date;
+    const fileuploads = req.file.originalname.replace(" ", "");
+    const sql = await executeQuery("insert into reports(title,title_en,content,content_en,file,is_publish,date,created_at,updated_at,report_category_id) values(?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, fileuploads, req.body.is_publish, file_date, timeupdate, timeupdate, req.body.file_category_id]);
+    if (sql) {
+        res.redirect('/elibrary');
+    } else {
+        console.log(sql);
+        res.redirect('/elibrary');
+    }
+}
 
+const updatefileupload = async (req, res) => {
+    const today = new Date();
+    const month = (today.getMonth() + 1);
+    const mmm = month.length < 2 ? "0" + month : month;
+    const date = today.getFullYear() + '-' + mmm + '-' + today.getDate();
+    const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    const timeupdate = date + ' ' + time;
+    const file_date = req.body.date;
+    if (!req.file || req.file == undefined || req.file == "") {
+        const sql = await executeQuery("update reports set title=?,title_en=?,content=?,content_en=?,is_publish=?,date=?,created_at=?,updated_at=?,report_category_id=? where id = ?",
+            [req.body.title, req.body.title_en, req.body.content, req.body.content_en, req.body.is_publish, file_date, timeupdate, timeupdate, req.body.file_category_id, req.body.id]);
+        if (sql) {
+            res.redirect('/elibrary');
+        } else {
+            console.log(sql);
+            res.redirect('/elibrary');
+        }
+    } else {
+        const fileuploads = req.file.originalname.replace(" ", "");
+        const sql = await executeQuery("update reports set title=?,title_en=?,content=?,content_en=?,file=?,is_publish=?,date=?,created_at=?,updated_at=?,report_category_id=? where id = ?",
+            [req.body.title, req.body.title_en, req.body.content, req.body.content_en, fileuploads, req.body.is_publish, file_date, timeupdate, timeupdate, req.body.file_category_id, req.body.id]);
+        if (sql) {
+            res.redirect('/elibrary');
+        } else {
+            console.log(sql);
+            res.redirect('/elibrary');
+        }
+    }
+}
+
+const deletefileupload = async (req, res) => {
+
+    const id_files = req.params.id;
+    const file_upload = req.params.file;
+    if (fs.existsSync(fileslinux + 'filesupload/' + file_upload)) {
+        fs.unlink(fileslinux + 'filesupload/' + file_upload, async function (err) {
+            if (err) return console.log(err);
+            const sql = await executeQuery('DELETE FROM reports where id = ? ', [id_files]);
+            if (sql) {
+                res.redirect('/elibrary');
+            } else {
+                console.log(sql);
+                res.redirect('/elibrary');
+            }
+        });
+        console.log("ada")
+    } else {
+        const sql = await executeQuery('DELETE FROM reports where id = ? ', [id_files]);
+        if (sql) {
+            res.redirect('/elibrary');
+        } else {
+            console.log(sql);
+            res.redirect('/elibrary');
+        }
+    }
+
+}
 
 //::::::::::::::::::::::::::::::End Of Files/Library :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -591,6 +666,9 @@ module.exports = {
     filesdetails,
     files_category,
     files_category_details,
+    updatefileupload,
+    insertfileupload,
+    deletefileupload,
     dashboards,
 }
 //::::::::::::::::::::::::::::::End Of Module:::::::::::::::::::::::::::::::::::::::::::::::::::::
