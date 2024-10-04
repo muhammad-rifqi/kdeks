@@ -52,7 +52,7 @@
             <!-- DataTable with Buttons -->
             <div class="card">
               <div class="card-datatable table-responsive p-5">
-                <table id="news" class="display" style="width: 100%;">
+                <table id="users_data" class="display" style="width: 100%;">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -119,7 +119,7 @@
   <script>
     $(document).ready(function () {
       // 2. Inisialisasi DataTable
-      $('#news').DataTable({
+      $('#users_data').DataTable({
         "ajax": {
           "url": "/api_users",
           "dataSrc": ""

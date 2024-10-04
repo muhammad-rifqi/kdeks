@@ -49,7 +49,7 @@
             <!-- DataTable with Buttons -->
             <div class="card">
               <div class="card-datatable table-responsive p-5">
-                <table id="news" class="display" style="width: 100%;">
+                <table id="sejarah" class="display" style="width: 100%;">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -143,7 +143,7 @@
         ],
       });
 
-      $('#news').on('click', '.edit-btn', function () {
+      $('#sejarah').on('click', '.edit-btn', function () {
         var id = $(this).data('id');
         window.location.href = '/sejarah_edit/' + id;
       });
