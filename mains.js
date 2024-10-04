@@ -153,6 +153,8 @@ apps.get('/api_news_detail/:id', db.news_details);
 
 apps.post('/insertnews', news_path.single('photo'), db.insertnews);
 
+apps.post('/updatenews', news_path.single('photo'), db.updatenews);
+
 apps.get('/api_newscategory', db.news_categories);
 
 apps.get('/api_detailnewscategory/:id', db.news_detailnewscategory);

@@ -115,7 +115,7 @@
   <script>
     $(document).ready(function () {
       // 2. Inisialisasi DataTable
-      $('#news').DataTable({
+      $('#sejarah').DataTable({
         "ajax": {
           "url": "/api_detailabout/2",
           "dataSrc": ""
@@ -148,7 +148,7 @@
         window.location.href = '/sejarah_edit/' + id;
       });
 
-      $('#news').on('click', '.delete-btn', function () {
+      $('#sejarah').on('click', '.delete-btn', function () {
         var id = $(this).data('id');
         var foto = $(this).data('foto');
         if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
