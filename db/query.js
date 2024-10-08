@@ -2,8 +2,8 @@ const md5 = require('md5');
 const { executeQuery } = require('./config');
 const fs = require('fs');
 
-// let fileswindows = 'D:/kneksbe/webdevkneks/public/uploads/';
-let fileslinux = '/var/www/html/kdeks.rifhandi.com/public_html/webdevkneks/public/uploads/';
+let fileswindows = 'D:/kneksbe/kdeks/public/uploads/';
+let fileslinux = '/var/www/html/kdeks.rifhandi.com/public_html/kdeks/public/uploads/';
 
 //::::::::::::::::::::::::::::::Start Of LOGIN LOGOUT :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -295,8 +295,8 @@ const insertphoto = async (req, res) => {
 const deletephoto = async (req, res) => {
     const id_photo = req.params.id;
     const foto_photo = req.params.foto;
-    if (fs.existsSync(fileslinux + 'photo/' + foto_photo)) {
-        fs.unlink(fileslinux + 'photo/' + foto_photo, async function (err) {
+    if (fs.existsSync(fileswindows + 'photo/' + foto_photo)) {
+        fs.unlink(fileswindows + 'photo/' + foto_photo, async function (err) {
             if (err) return console.log(err);
             const sql = await executeQuery('DELETE FROM news_photos where id = ? ', [id_photo]);
             if (sql) {
@@ -602,8 +602,8 @@ const deletefileupload = async (req, res) => {
 
     const id_files = req.params.id;
     const file_upload = req.params.file;
-    if (fs.existsSync(fileslinux + 'filesupload/' + file_upload)) {
-        fs.unlink(fileslinux + 'filesupload/' + file_upload, async function (err) {
+    if (fs.existsSync(fileswindows + 'filesupload/' + file_upload)) {
+        fs.unlink(fileswindows + 'filesupload/' + file_upload, async function (err) {
             if (err) return console.log(err);
             const sql = await executeQuery('DELETE FROM reports where id = ? ', [id_files]);
             if (sql) {
