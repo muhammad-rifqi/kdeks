@@ -10,7 +10,7 @@ let fileslinux = '/var/www/html/kdeks.rifhandi.com/public_html/kdeks/public/uplo
 const do_login = async (req, res) => {
     const email = req?.body?.email;
     const password = md5(req?.body?.password);
-    const sql = await executeQuery('SELECT * FROM users where email = ? AND password = ? ', [email, password])
+    const sql = await executeQuery('SELECT * FROM users where email = $1 AND password = $1 ', [email, password])
     if (sql?.length > 0) {
         const isLogin = true;
         res.cookie("islogin", isLogin);
@@ -213,11 +213,11 @@ const updatenewscategory = async (req, res) => {
 
 const abouts = async (req, res) => {
     const sql = await executeQuery('SELECT * FROM abouts');
-    if (sql?.length > 0) {
-        res.status(200).json(sql)
-    } else {
-        res.status(200).json({ "success": false })
-    }
+    // if (sql?.row?.length > 0) {
+        res.status(200).json(sql?.rows)
+    // } else {
+    //     res.status(200).json({ "success": false })
+    // }
 
 }
 
