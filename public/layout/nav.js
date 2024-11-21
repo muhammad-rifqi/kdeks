@@ -83,22 +83,6 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
             </a>
           </li>
 
-          <!-- Home Management -->
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons ri-home-office-line"></i>
-              <div data-i18n="Home Management">Home Management</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="/home_management" class="menu-link">
-                  <div data-i18n="Home">Home</div>
-                </a>
-              </li>
-
-            </ul>
-          </li>
-
           <!-- E-Library -->
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -109,21 +93,6 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
               <li class="menu-item">
                 <a href="/elibrary" class="menu-link">
                   <div data-i18n="E-Library">E-Library</div>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <!-- User Management -->
-          <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-              <i class="menu-icon tf-icons ri-group-line"></i>
-              <div data-i18n="User Management">User Management</div>
-            </a>
-            <ul class="menu-sub">
-              <li class="menu-item">
-                <a href="/users" class="menu-link">
-                  <div data-i18n="Users">Users</div>
                 </a>
               </li>
             </ul>

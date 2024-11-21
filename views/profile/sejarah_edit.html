@@ -50,7 +50,7 @@
                         <div class="card">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form action="/updatetentangkami" method="post">
+                                    <form action="/updatesejarah" method="post">
                                         <input type="hidden" name="id" id="id" value="">
                                         <div class="card stretch stretch-full">
                                             <div class="card-body lead-status">
@@ -157,7 +157,7 @@
 
         function getUrlById() {
             const URLS = new URL(window.location.href);
-            fetch('/api_detailabout/' + URLS.pathname.split('/')[2])
+            fetch('/api_detailhistory/' + URLS.pathname.split('/')[2])
                 .then(data => data.json())
                 .then((rows) => {
                     document.getElementById("id").value = rows[0]?.id;

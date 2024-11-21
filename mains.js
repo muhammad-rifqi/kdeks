@@ -175,9 +175,17 @@ apps.post('/insertnews', news_path.single('photo'), db.insertnews);
 
 apps.post('/updatenews', news_path.single('photo'), db.updatenews);
 
+apps.get('/deletenews/:id/:foto', db.deletenews);
+
 apps.get('/api_newscategory', db.news_categories);
 
 apps.get('/api_detailnewscategory/:id', db.news_detailnewscategory);
+
+apps.post('/insertnewscategory', db.insertnewscategory);
+
+apps.post('/updatenewscategory', db.updatenewscategory);
+
+apps.get('/deletenews_category/:id' , db.deletenewscategory);
 
 apps.get('/api_newsphoto', db.news_photo);
 
@@ -220,6 +228,14 @@ apps.get('/deletefilesupload/:id/:file' , db.deletefileupload);
 apps.get('/api_about', db.abouts);
 
 apps.get('/api_detailabout/:id', db.detailabout);
+
+apps.post('/updatetentangkami', db.updateabout);
+
+apps.get('/api_history', db.history);
+
+apps.get('/api_detailhistory/:id', db.detailhistory);
+
+apps.post('/updatesejarah', db.updatehistory);
 
 apps.post('/act_login', db.do_login);
 

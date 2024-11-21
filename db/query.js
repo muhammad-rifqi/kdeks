@@ -36,13 +36,13 @@ const do_logout = (req, res) => {
 
 const dashboards = async (req, res) => {
 
-    const news_mounts = await executeQuery('SELECT * FROM news');
+    const news_mounts = await executeQuery("SELECT * FROM news where web_identity ='kdeks'");
     const jumlah1 = news_mounts.length;
-    const videos_mounts = await executeQuery('SELECT * FROM news_videos');
+    const videos_mounts = await executeQuery("SELECT * FROM news_videos where web_identity ='kdeks'");
     const jumlah2 = videos_mounts.length;
-    const photos_mounts = await executeQuery('SELECT * FROM news_photos');
+    const photos_mounts = await executeQuery("SELECT * FROM news_photos where web_identity ='kdeks'");
     const jumlah3 = photos_mounts.length;
-    const files_mounts = await executeQuery('SELECT * FROM reports');
+    const files_mounts = await executeQuery("SELECT * FROM reports where web_identity ='kdeks'");
     const jumlah4 = files_mounts.length;
 
     const mounted = {
@@ -60,10 +60,10 @@ const dashboards = async (req, res) => {
 
 const news = async (req, res) => {
 
-    const result = await executeQuery("SELECT * FROM news where id between 580 and 700 ORDER BY id ASC ");
+    const result = await executeQuery("SELECT * FROM news where id between 580 and 700 AND web_identity = 'kdeks' ORDER BY id ASC ");
     let promises = result.map(async (item) => {
         return new Promise(async (resolve, reject) => {
-            let r = await executeQuery("SELECT * FROM news_categories WHERE id = ?", [item.category_id]);
+            let r = await executeQuery("SELECT * FROM news_categories WHERE id = ? AND  web_identity = 'kdeks' ", [item.category_id]);
             let detail = r[0];
             let row = {
                 "id": item?.id,
@@ -76,6 +76,7 @@ const news = async (req, res) => {
                 "excerpt_en": item?.excerpt_en,
                 "is_publish": item?.is_publish,
                 "image": item?.image,
+                "img": item?.image?.split('/')[5],
                 "category_id": item?.category_id,
                 "detail": detail
             };
@@ -94,7 +95,7 @@ const news = async (req, res) => {
 
 const news_details = async (req, res) => {
     const id_news = req.params.id;
-    const sql = await executeQuery('SELECT * FROM news where id = ? ', [id_news]);
+    const sql = await executeQuery("SELECT * FROM news where id = ? AND web_identity = 'kdeks' ", [id_news]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -103,7 +104,7 @@ const news_details = async (req, res) => {
 }
 
 const news_categories = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM news_categories');
+    const sql = await executeQuery("SELECT * FROM news_categories where web_identity = 'kdeks'");
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -113,7 +114,7 @@ const news_categories = async (req, res) => {
 
 const news_detailnewscategory = async (req, res) => {
     const id_cat = req.params.id;
-    const sql = await executeQuery('SELECT * FROM news_categories where id = ? ', [id_cat]);
+    const sql = await executeQuery("SELECT * FROM news_categories where id = ? AND web_identity = 'kdeks'", [id_cat]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -130,9 +131,9 @@ const insertnews = async (req, res) => {
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const timeupdate = date + ' ' + time;
     const news_datetime = req.body.news_datetime.replace("T", " ");
-    const fileupload = req.file.originalname.replace(" ", "");
-    const sql = await executeQuery("insert into news(title,title_en,excerpt,excerpt_en,content,content_en,image,is_publish,news_datetime,created_at,updated_at,deleted_at,category_id) values(?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.excerpt, req.body.excerpt_en, req.body.content, req.body.content_en, fileupload, req.body.is_publish, news_datetime, timeupdate, timeupdate, null, req.body.category_id]);
+    const fileupload = "https://kdeks.rifhandi.com/uploads/news/" + req.file.originalname.replace(" ", "");
+    const sql = await executeQuery("insert into news(title,title_en,excerpt,excerpt_en,content,content_en,image,is_publish,news_datetime,created_at,updated_at,deleted_at,category_id, web_identity) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.excerpt, req.body.excerpt_en, req.body.content, req.body.content_en, fileupload, req.body.is_publish, news_datetime, timeupdate, timeupdate, null, req.body.category_id, 'kdeks']);
     if (sql) {
         res.redirect('/news');
     } else {
@@ -161,7 +162,7 @@ const updatenews = async (req, res) => {
             res.redirect('/news');
         }
     } else {
-        const fileupload = req.file.originalname.replace(" ", "");
+        const fileupload = "https://kdeks.rifhandi.com/uploads/news/" + req.file.originalname.replace(" ", "");
         const sql = await executeQuery("UPDATE news set  title=?,title_en=?,excerpt=?,excerpt_en=?,content=?,content_en=?,image=?,is_publish=?,news_datetime=?,created_at=?,updated_at=?,deleted_at=?,category_id=? where id = ?",
             [req.body.title, req.body.title_en, req.body.excerpt, req.body.excerpt_en, req.body.content, req.body.content_en, fileupload, req.body.is_publish, news_datetime, timeupdate, timeupdate, null, req.body.news_category_id, req.body.id]);
         if (sql) {
@@ -174,6 +175,32 @@ const updatenews = async (req, res) => {
 
 }
 
+const deletenews = async (req, res) => {
+    const id_news = req.params.id;
+    const foto_news = req.params.foto;
+    if (fs.existsSync(fileslinux + 'news/' + foto_news)) {
+        fs.unlink(fileslinux + 'news/' + foto_news, async function (err) {
+            if (err) return console.log(err);
+            const sql = await executeQuery('DELETE FROM news where id = ? ', [id_news]);
+            if (sql) {
+                res.redirect('/news');
+            } else {
+                console.log(sql);
+                res.redirect('/news');
+            }
+        });
+        console.log("ada")
+    } else {
+        const sql = await executeQuery('DELETE FROM news where id = ? ', [id_news]);
+        if (sql) {
+            res.redirect('/news');
+        } else {
+            console.log(sql);
+            res.redirect('/news');
+        }
+    }
+}
+
 const insertnewscategory = async (req, res) => {
     const today = new Date();
     const month = (today.getMonth() + 1);
@@ -181,13 +208,13 @@ const insertnewscategory = async (req, res) => {
     const date = today.getFullYear() + '-' + mmm + '-' + today.getDate();
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const cat_datetime = date + ' ' + time;
-    const sql = await executeQuery("insert into news_categories(title,title_en,created_at,updated_at) values(?,?,?,?)",
-        [req.body.title, req.body.title_en, cat_datetime, cat_datetime]);
+    const sql = await executeQuery("insert into news_categories(title,title_en,description, description_en,created_at,updated_at, web_identity) values(?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.description, req.body.description_en, cat_datetime, cat_datetime, 'kdeks']);
     if (sql) {
-        res.redirect('/nc');
+        res.redirect('/news_category');
     } else {
         console.log(sql)
-        res.redirect('/nc');
+        res.redirect('/news_category');
     }
 }
 
@@ -201,10 +228,21 @@ const updatenewscategory = async (req, res) => {
     const sql = await executeQuery("update news_categories set title=?,title_en=?,description=?,description_en=?,created_at=?,updated_at=? where id = ?",
         [req.body.title, req.body.title_en, req.body.description, req.body.description_en, time_datetime, time_datetime, req.body.id]);
     if (sql) {
-        res.redirect('/nc');
+        res.redirect('/news_category');
     } else {
         console.log(sql)
-        res.redirect('/nc');
+        res.redirect('/news_category');
+    }
+}
+
+const deletenewscategory = async (req, res) => {
+    const id_news_category = req.params.id;
+    const sql = await executeQuery("DELETE FROM news_categories where id = ?", [id_news_category]);
+    if (!sql) {
+        console.log(sql)
+        res.redirect('/news_category');
+    } else {
+        res.redirect('/news_category');
     }
 }
 
@@ -212,18 +250,14 @@ const updatenewscategory = async (req, res) => {
 //::::::::::::::::::::::::::::::Start Of Abouts:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const abouts = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM abouts');
-    // if (sql?.row?.length > 0) {
-        res.status(200).json(sql)
-    // } else {
-    //     res.status(200).json({ "success": false })
-    // }
+    const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'about'");
+    res.status(200).json(sql)
 
 }
 
 const detailabout = async (req, res) => {
     const id_abouts = req.params.id;
-    const sql = await executeQuery('SELECT *  FROM  abouts where id=?', [id_abouts]);
+    const sql = await executeQuery("SELECT *  FROM  abouts where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [id_abouts]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -231,12 +265,47 @@ const detailabout = async (req, res) => {
     }
 }
 
+const updateabout = async (req, res) => {
+    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [req.body.title,req.body.title_en,req.body.tag,req.body.content,req.body.content_en,req.body.id]);
+    if (sql) {
+            res.redirect('/tentangkami');
+    } else {
+            res.redirect('/tentangkami');
+    }
+}
+
+const history = async (req, res) => {
+    const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'history'");
+    res.status(200).json(sql)
+
+}
+
+const detailhistory = async (req, res) => {
+    const id_history = req.params.id;
+    const sql = await executeQuery("SELECT *  FROM  abouts where id = ? AND web_identity = 'kdeks' AND tag = 'history' ", [id_history]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const updatehistory = async (req, res) => {
+    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' AND tag = 'history' ", [req.body.title,req.body.title_en,req.body.tag,req.body.content,req.body.content_en,req.body.id]);
+    if (sql) {
+            res.redirect('/sejarah');
+    } else {
+            res.redirect('/sejarah');
+    }
+}
+
+
 //::::::::::::::::::::::::::::::End Of Abouts :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //::::::::::::::::::::::::::::::Start Of Photos & Videos :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const news_photo = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM news_photos')
+    const sql = await executeQuery("SELECT * FROM news_photos where web_identity = 'kdeks'")
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -245,7 +314,7 @@ const news_photo = async (req, res) => {
 }
 
 const news_video = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM news_videos')
+    const sql = await executeQuery("SELECT * FROM news_videos AND web_identity = 'kdeks'")
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -255,7 +324,7 @@ const news_video = async (req, res) => {
 
 const news_photodetail = async (req, res) => {
     const id_ph = req.params.id;
-    const sql = await executeQuery('SELECT * FROM  news_photos where id=?', [id_ph]);
+    const sql = await executeQuery("SELECT * FROM  news_photos where id=? AND web_identity = 'kdeks'", [id_ph]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -265,7 +334,7 @@ const news_photodetail = async (req, res) => {
 
 const news_videodetail = async (req, res) => {
     const id_vid = req.params.id;
-    const sql = await executeQuery('SELECT * FROM  news_videos where id=?', [id_vid]);
+    const sql = await executeQuery("SELECT * FROM  news_videos where id=? AND web_identity = 'kdeks'", [id_vid]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -282,8 +351,8 @@ const insertphoto = async (req, res) => {
     const time_datetime = date + ' ' + time;
     const photos_datetime = req.body.photo_datetime.replace("T", " ");
     const photoupload = req.file.originalname.replace(" ", "");
-    const sql = await executeQuery("insert into news_photos(title,title_en,content,content_en,photo,news_datetime,created_at,updated_at,deleted_at) values(?,?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, photoupload, photos_datetime, time_datetime, time_datetime, null])
+    const sql = await executeQuery("insert into news_photos(title,title_en,content,content_en,photo,news_datetime,created_at,updated_at,deleted_at, web_identity) values(?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, photoupload, photos_datetime, time_datetime, time_datetime, null, 'kdeks'])
     if (sql) {
         res.redirect('/photo');
     } else {
@@ -358,8 +427,8 @@ const insertvideo = async (req, res) => {
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const time_datetime = date + ' ' + time;
     const videos_datetime = req.body.video_datetime.replace("T", " ");
-    const sql = await executeQuery("insert into news_videos(title,title_en,content,content_en,video,duration,news_datetime,created_at,updated_at,deleted_at) values(?,?,?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, req.body.video, req.body.duration, videos_datetime, time_datetime, time_datetime, null]);
+    const sql = await executeQuery("insert into news_videos(title,title_en,content,content_en,video,duration,news_datetime,created_at,updated_at,deleted_at, web_identity) values(?,?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, req.body.video, req.body.duration, videos_datetime, time_datetime, time_datetime, null, 'kdeks']);
     if (sql) {
         res.redirect('/video');
     } else {
@@ -402,7 +471,7 @@ const updatevideos = async (req, res) => {
 //::::::::::::::::::::::::::::::Start Of Users:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const users = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM users');
+    const sql = await executeQuery("SELECT * FROM users where web_identity = 'kdeks'");
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -411,7 +480,7 @@ const users = async (req, res) => {
 }
 
 const userroles = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM  roles');
+    const sql = await executeQuery("SELECT * FROM  roles where web_identity = 'kdeks'");
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -421,7 +490,7 @@ const userroles = async (req, res) => {
 
 const detailsusers = async (req, res) => {
     const id_users = req.params.id;
-    const sql = await executeQuery('SELECT * FROM users where id = ? ', [id_users]);
+    const sql = await executeQuery("SELECT * FROM users where id = ? AND web_identity = 'kdeks' ", [id_users]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -437,8 +506,8 @@ const insertusers = async (req, res) => {
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const time_datetime = date + ' ' + time;
     const pw = md5(req.body.password);
-    const sql = await executeQuery("insert into users(name,email,password,role_id,created_at,updated_at) values(?,?,?,?,?,?)",
-        [req.body.name, req.body.email, pw, req.body.role_id, time_datetime, time_datetime]);
+    const sql = await executeQuery("insert into users(name,email,password,role_id,created_at,updated_at, web_identity) values(?,?,?,?,?,?,?)",
+        [req.body.name, req.body.email, pw, req.body.role_id, time_datetime, time_datetime, 'kdeks']);
     if (sql) {
         res.redirect('/users');
     } else {
@@ -461,7 +530,7 @@ const deleteusers = async (req, res) => {
 //::::::::::::::::::::::::::::::Start Of Users :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const agenda = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM  agendas');
+    const sql = await executeQuery("SELECT * FROM  agendas where web_identity = 'kdeks'");
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -470,8 +539,8 @@ const agenda = async (req, res) => {
 }
 
 const agendadetail = async (req, res) => {
-    const id_files = req.params.id;
-    const sql = await executeQuery('SELECT * FROM  agendas where id = ? ', [id_files]);
+    const id_agenda = req.params.id;
+    const sql = await executeQuery("SELECT * FROM  agendas where id = ? AND web_identity = 'kdeks' ", [id_agenda]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -487,8 +556,8 @@ const insertagenda = async (req, res) => {
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const time_datetime = date + ' ' + time;
     const agenda_datetime = req.body.agenda_datetime.replace("T", " ");
-    const sql = await executeQuery("insert into agendas(title,title_en,url, agenda_datetime ,place,organizer, created_at, updated_at) values(?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.url, agenda_datetime, req.body.place, req.body.organizer, time_datetime, time_datetime]);
+    const sql = await executeQuery("insert into agendas(title,title_en,url, agenda_datetime ,place,organizer, created_at, updated_at, web_identity) values(?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.url, agenda_datetime, req.body.place, req.body.organizer, time_datetime, time_datetime, 'kdeks']);
     if (sql) {
         res.redirect('/agenda');
     } else {
@@ -512,7 +581,7 @@ const deleteagenda = async (req, res) => {
 //::::::::::::::::::::::::::::::Start Of Files/Library :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const files = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM  reports');
+    const sql = await executeQuery("SELECT * FROM  reports where web_identity = 'kdeks'");
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -522,7 +591,7 @@ const files = async (req, res) => {
 
 const filesdetails = async (req, res) => {
     const id_files = req.params.id;
-    const sql = await executeQuery('SELECT * FROM  reports where id = ? ', [id_files]);
+    const sql = await executeQuery("SELECT * FROM  reports where id = ? AND web_identity = 'kdeks'", [id_files]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -531,7 +600,7 @@ const filesdetails = async (req, res) => {
 }
 
 const files_category = async (req, res) => {
-    const sql = await executeQuery('SELECT * FROM  report_categories');
+    const sql = await executeQuery("SELECT * FROM  report_categories where web_identity = 'kdeks'");
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -541,7 +610,7 @@ const files_category = async (req, res) => {
 
 const files_category_details = async (req, res) => {
     const id_files_category = req.params.id;
-    const sql = await executeQuery('SELECT * FROM  report_categories where id = ? ', [id_files_category]);
+    const sql = await executeQuery("SELECT * FROM  report_categories where id = ? AND web_identity = 'kdeks' ", [id_files_category]);
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -558,8 +627,8 @@ const insertfileupload = async (req, res) => {
     const timeupdate = date + ' ' + time;
     const file_date = req.body.date;
     const fileuploads = req.file.originalname.replace(" ", "");
-    const sql = await executeQuery("insert into reports(title,title_en,content,content_en,file,is_publish,date,created_at,updated_at,report_category_id) values(?,?,?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, fileuploads, req.body.is_publish, file_date, timeupdate, timeupdate, req.body.file_category_id]);
+    const sql = await executeQuery("insert into reports(title,title_en,content,content_en,file,is_publish,date,created_at,updated_at,report_category_id,web_identity) values(?,?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, fileuploads, req.body.is_publish, file_date, timeupdate, timeupdate, req.body.file_category_id, 'kdeks']);
     if (sql) {
         res.redirect('/elibrary');
     } else {
@@ -635,10 +704,12 @@ module.exports = {
     do_logout,
     news,
     insertnews,
+    deletenews,
     updatenews,
     news_details,
     news_categories,
     updatenewscategory,
+    deletenewscategory,
     news_detailnewscategory,
     insertnewscategory,
     news_photo,
@@ -653,6 +724,10 @@ module.exports = {
     deletevideo,
     abouts,
     detailabout,
+    updateabout,
+    history,
+    detailhistory,
+    updatehistory,
     users,
     userroles,
     insertusers,

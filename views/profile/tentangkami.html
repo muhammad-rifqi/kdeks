@@ -117,7 +117,7 @@
       // 2. Inisialisasi DataTable
       $('#tk').DataTable({
         "ajax": {
-          "url": "/api_detailabout/1",
+          "url": "/api_about",
           "dataSrc": ""
         },
         "columns": [
@@ -127,8 +127,7 @@
           {
             "data": null,
             "render": function (data, type, row) {
-              return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
-                                <button class='delete-btn btn btn-danger' data-id='${row.id}' data-foto='${row.image}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
+              return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button></p>`;
             }
           }
         ],
@@ -148,13 +147,6 @@
         window.location.href = '/tentangkami_edit/' + id;
       });
 
-      $('#tk').on('click', '.delete-btn', function () {
-        var id = $(this).data('id');
-        var foto = $(this).data('foto');
-        if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
-          window.location.href = '/deletenews/' + id + '/' + foto;
-        }
-      });
     });
   </script>
 
