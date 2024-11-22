@@ -63,7 +63,7 @@ document.write(` <aside id="layout-menu" class="layout-menu menu-vertical menu b
                 </a>
               </li>
               <li class="menu-item">
-                <a href="/video" class="menu-link" target="_blank">
+                <a href="/video" class="menu-link">
                   <div data-i18n="Video">Video</div>
                 </a>
               </li>

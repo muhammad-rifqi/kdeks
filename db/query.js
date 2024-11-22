@@ -307,14 +307,31 @@ const updatehistory = async (req, res) => {
 const news_photo = async (req, res) => {
     const sql = await executeQuery("SELECT * FROM news_photos where web_identity = 'kdeks'")
     if (sql?.length > 0) {
-        res.status(200).json(sql)
+        const array = [];
+        sql?.forEach((items, index) => {
+            const bbb = {
+                "id": items?.id,
+                "title": items?.title,
+                "photo": items?.photo,
+                "content": items?.content,
+                "created_at": items?.created_at,
+                "updated_at": items?.updated_at,
+                "deleted_at": items?.deleted_at,
+                "news_datetime": items?.news_datetime,
+                "title_en": items?.title_en,
+                "content_en": items?.content_en,
+                "ph": items?.photo?.split('/')[5]
+            };
+            array.push(bbb);
+        })
+        res.status(200).json(array);
     } else {
         res.status(200).json({ "success": false })
     }
 }
 
 const news_video = async (req, res) => {
-    const sql = await executeQuery("SELECT * FROM news_videos AND web_identity = 'kdeks'")
+    const sql = await executeQuery("SELECT * FROM news_videos where web_identity = 'kdeks'")
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
@@ -350,7 +367,7 @@ const insertphoto = async (req, res) => {
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const time_datetime = date + ' ' + time;
     const photos_datetime = req.body.photo_datetime.replace("T", " ");
-    const photoupload = req.file.originalname.replace(" ", "");
+    const photoupload = "https://kdeks.rifhandi.com/uploads/photo/" + req.file.originalname.replace(" ", "");
     const sql = await executeQuery("insert into news_photos(title,title_en,content,content_en,photo,news_datetime,created_at,updated_at,deleted_at, web_identity) values(?,?,?,?,?,?,?,?,?,?)",
         [req.body.title, req.body.title_en, req.body.content, req.body.content_en, photoupload, photos_datetime, time_datetime, time_datetime, null, 'kdeks'])
     if (sql) {
@@ -406,7 +423,7 @@ const updatephoto = async (req, res) => {
             res.redirect('/photo');
         }
     } else {
-        const fileuploads = req.file.originalname.replace(" ", "");
+        const fileuploads = "https://kdeks.rifhandi.com/uploads/photo/" + req.file.originalname.replace(" ", "");
         const sql = await executeQuery("UPDATE news_photos set  title=?,title_en=?,content=?,content_en=?,photo=?, news_datetime=?,created_at=?,updated_at=?,deleted_at=? where id = ?",
             [req.body.title, req.body.title_en, req.body.content, req.body.content_en, fileuploads, news_datetime, timeupdate, timeupdate, null, req.body.id]);
         if (sql) {
@@ -459,10 +476,10 @@ const updatevideos = async (req, res) => {
     const sql = await executeQuery("update news_videos set title=?,title_en=?,content=?,content_en=?,video=?,duration=?,news_datetime=?,created_at=?,updated_at=? where id = ?",
         [req.body.title, req.body.title_en, req.body.content, req.body.content_en, req.body.video, req.body.duration, videos_datetime, time_datetime, time_datetime, req.body.id]);
     if (sql) {
-        res.redirect('/v');
+        res.redirect('/video');
     } else {
         console.log(sql)
-        res.redirect('/v');
+        res.redirect('/video');
     }
 }
 

@@ -177,13 +177,15 @@
             fetch('/api_detail_newsvideo/' + URLS.pathname.split('/')[2])
                 .then(data => data.json())
                 .then((rows) => {
+                    console.log(rows[0]?.news_datetime.split('.')[0])
                     document.getElementById("id").value = rows[0]?.id;
                     document.getElementById("title").value = rows[0]?.title;
                     document.getElementById("title_en").value = rows[0]?.title_en;
                     document.getElementById("editor3").innerHTML = rows[0]?.content;
                     document.getElementById("editor4").innerHTML = rows[0]?.content_en;
-                    document.getElementById("news_datetime").value = rows[0]?.news_datetime.split('.')[0];
-                    document.getElementById("preview").innerHTML = `<img src="https://webdev.rifhandi.com/uploads/photo/${rows[0]?.photo}" width="180"/>`;
+                    document.getElementById("videos").value = rows[0]?.video;
+                    document.getElementById("durations").value = rows[0]?.duration;
+                    document.getElementById("video_datetimes").value = rows[0]?.news_datetime.split('.')[0];
                 })
         }
     </script>

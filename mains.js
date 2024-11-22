@@ -101,6 +101,14 @@ apps.get('/sk', (req, res) => {
     res.sendFile(path.resolve('./views/profile/sk.html'));
 })
 
+apps.get('/sk_add', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/sk_add.html'));
+})
+
+apps.get('/sk_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/sk_edit.html'));
+})
+
 apps.get('/video', (req, res) => {
     res.sendFile(path.resolve('./views/profile/video.html'));
 })
@@ -200,6 +208,12 @@ apps.get('/api_newsvideo', db.news_video);
 apps.get('/api_detail_newsphoto/:id', db.news_photodetail);
 
 apps.get('/api_detail_newsvideo/:id', db.news_videodetail);
+
+apps.post('/insertvideo', db.insertvideo);
+
+apps.post('/updatevideo', db.updatevideos);
+
+apps.get('/deletevideo/:id', db.deletevideo);
 
 apps.get('/api_users', db.users);
 
