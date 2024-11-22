@@ -266,11 +266,11 @@ const detailabout = async (req, res) => {
 }
 
 const updateabout = async (req, res) => {
-    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [req.body.title,req.body.title_en,req.body.tag,req.body.content,req.body.content_en,req.body.id]);
+    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id]);
     if (sql) {
-            res.redirect('/tentangkami');
+        res.redirect('/tentangkami');
     } else {
-            res.redirect('/tentangkami');
+        res.redirect('/tentangkami');
     }
 }
 
@@ -291,11 +291,11 @@ const detailhistory = async (req, res) => {
 }
 
 const updatehistory = async (req, res) => {
-    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' AND tag = 'history' ", [req.body.title,req.body.title_en,req.body.tag,req.body.content,req.body.content_en,req.body.id]);
+    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' AND tag = 'history' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id]);
     if (sql) {
-            res.redirect('/sejarah');
+        res.redirect('/sejarah');
     } else {
-            res.redirect('/sejarah');
+        res.redirect('/sejarah');
     }
 }
 
@@ -483,6 +483,60 @@ const updatevideos = async (req, res) => {
     }
 }
 
+const sk = async (req, res) => {
+    const sql = await executeQuery("SELECT * FROM sk")
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const sk_detail = async (req, res) => {
+    const id_sk = req.params.id;
+    const sql = await executeQuery("SELECT * FROM sk where id = ? ", [id_sk]);
+    if (sql?.length > 0) {
+        res.status(200).json(sql)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
+const insertsk = async (req, res) => {
+    const sql = await executeQuery("insert into sk(title,title_en,content,content_en,doc_link) values(?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, req.body.link_doc]);
+    if (sql) {
+        res.redirect('/sk');
+    } else {
+        console.log(sql)
+        res.redirect('/sk');
+    }
+}
+
+const deletesk = async (req, res) => {
+    const id_sk = req.params.id;
+    const sql = await executeQuery('DELETE FROM  sk where id = ?', [id_sk]);
+    if (sql) {
+        res.redirect('/sk');
+    } else {
+        console.log(sql)
+        res.redirect('/sk');
+    }
+}
+
+
+const updatesk = async (req, res) => {
+    const sql = await executeQuery("UPDATE sk SET title=?,title_en=?,content=?,content_en=?,doc_link=? where id = ?",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en, req.body.link_doc, req.body.id]);
+    if (sql) {
+        res.redirect('/sk');
+    } else {
+        console.log(sql)
+        res.redirect('/sk');
+    }
+}
+
+
 //::::::::::::::::::::::::::::::End Of Photos & Videos :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 //::::::::::::::::::::::::::::::Start Of Users:::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -573,8 +627,8 @@ const insertagenda = async (req, res) => {
     const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     const time_datetime = date + ' ' + time;
     const agenda_datetime = req.body.agenda_datetime.replace("T", " ");
-    const sql = await executeQuery("insert into agendas(title,title_en,url, agenda_datetime ,place,organizer, created_at, updated_at, web_identity) values(?,?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.url, agenda_datetime, req.body.place, req.body.organizer, time_datetime, time_datetime, 'kdeks']);
+    const sql = await executeQuery("insert into agendas(title,title_en,url, agenda_datetime ,place,organizer, link, project , description, agenda_endtime, manager, contributor, indicator, impact, opening, participants, area, loc,priority_participants,kbli, age, gender, province, created_at, updated_at,web_identity) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.url, agenda_datetime, req.body.place, req.body.organizer, req.body.link, req.body.project, req.body.description, req.body.agenda_endtime, req.body.manager, req.body.contributor, req.body.indicator, req.body.impact, req.body.opening, req.body.participants, req.body.area, req.body.loc, req.body.priority_participants, req.body.kbli, req.body.age, req.body.gender, req.body.province, time_datetime, time_datetime,'kdeks']);
     if (sql) {
         res.redirect('/agenda');
     } else {
@@ -582,6 +636,26 @@ const insertagenda = async (req, res) => {
         res.redirect('/agenda');
     }
 }
+
+const updateagenda = async (req, res) => {
+
+    const today = new Date();
+    const month = (today.getMonth() + 1);
+    const mmm = month.length < 2 ? "0" + month : month;
+    const date = today.getFullYear() + '-' + mmm + '-' + today.getDate();
+    const time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    const agendadatetime = date + ' ' + time;
+
+    const sql = await executeQuery("update agendas set title=?, title_en=?, url=?, agenda_datetime=?, place=?, organizer=?, link=?, project=? , description=?, agenda_endtime=?, manager=?, contributor=?, indicator=?, impact=?, opening=?, participants=?, area=?, loc=?,priority_participants=?,kbli=?, age=?, gender=?, province=?, created_at=?, updated_at=? where id = ?",
+        [req.body.title, req.body.title_en, req.body.url, req.body.agenda_datetime, req.body.place, req.body.organizer, req.body.link, req.body.project, req.body.description, req.body.agenda_endtime, req.body.manager, req.body.contributor, req.body.indicator, req.body.impact, req.body.opening, req.body.participants, req.body.area, req.body.loc, req.body.priority_participants, req.body.kbli, req.body.age, req.body.gender, req.body.province, agendadatetime, agendadatetime, req.body.id]);
+    if (sql) {
+        res.redirect('/agenda');
+    } else {
+        console.log(sql);
+        res.redirect('/agenda');
+    }
+}
+
 
 const deleteagenda = async (req, res) => {
     const id_agenda = req.params.id;
@@ -739,6 +813,11 @@ module.exports = {
     insertvideo,
     updatevideos,
     deletevideo,
+    sk,
+    sk_detail,
+    insertsk,
+    updatesk,
+    deletesk,
     abouts,
     detailabout,
     updateabout,
@@ -754,6 +833,7 @@ module.exports = {
     agendadetail,
     insertagenda,
     deleteagenda,
+    updateagenda,
     files,
     filesdetails,
     files_category,

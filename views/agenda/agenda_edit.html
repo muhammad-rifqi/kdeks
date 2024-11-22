@@ -94,6 +94,107 @@
                                                         <input class="form-control" type="text" name="organizer"
                                                             id="organizer" required>
                                                     </div>
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Link Zoom</label>
+                                                        <input class="form-control" type="text" name="link" id="link"
+                                                            required>
+                                                    </div>
+            
+                                                     <!-- // ////////////////////////////////////////////////////////////////  -->
+                                                     <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Projek </label>
+                                                        <input class="form-control" type="text" name="project" id="project"
+                                                            required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Keterangan</label>
+                                                        <input class="form-control" type="text" name="description" id="description"
+                                                            required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Agenda Selesai</label>
+                                                        <input class="form-control" type="datetime-local" name="agenda_endtime"
+                                                            id="agenda_endtime" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Pengelola</label>
+                                                        <input class="form-control" type="text" name="manager" id="manager"
+                                                            required>
+                                                    </div>
+            
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Kontributor</label>
+                                                        <input class="form-control" type="text" name="contributor" id="contributor"
+                                                            required>
+                                                    </div>
+            
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Indikator</label>
+                                                        <input class="form-control" type="text" name="indicator" id="indicator"
+                                                            required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Impact</label>
+                                                        <input class="form-control" type="text" name="impact" id="impact" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Opening</label>
+                                                        <input class="form-control" type="text" name="opening" id="opening"
+                                                            required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Participants</label>
+                                                        <input class="form-control" type="text" name="participants"
+                                                            id="participants" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Area )* embed dari maps</label>
+                                                        <input class="form-control" type="text" name="area" id="area" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Level Of Content</label>
+                                                        <input class="form-control" type="text" name="loc" id="loc" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Priority Participants</label>
+                                                        <input class="form-control" type="text" name="priority_participants"
+                                                            id="priority_participants" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Kbli</label>
+                                                        <input class="form-control" type="text" name="kbli" id="kbli" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Usia Partisipan</label>
+                                                        <input class="form-control" type="text" name="age" id="age" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Gender</label>
+                                                        <input class="form-control" type="text" name="gender" id="gender" required>
+                                                    </div>
+            
+                                                    <div class="col-lg-12 mb-4">
+                                                        <label class="form-label">Province</label>
+                                                        <input class="form-control" type="text" name="province" id="province"
+                                                            required>
+                                                    </div>
+            
+            
+                                                    <!-- // ////////////////////////////////////////////////////////////////  -->
                                                     <div class="col-lg-12 mb-4 text-left">
                                                         <label class="form-label"></label>
                                                         <button class="btn btn-primary" type="submit">Simpan</button>
@@ -171,6 +272,24 @@
                     document.getElementById("place").value = rows[0]?.place;
                     document.getElementById("organizer").value = rows[0]?.organizer;
                     document.getElementById("agenda_datetime").value = rows[0]?.agenda_datetime.split('.')[0];
+                    document.getElementById("link").value = rows[0]?.link;
+                    document.getElementById("agenda_datetime").value = rows[0]?.agenda_datetime.split('.')[0];
+                    document.getElementById("project").value = rows[0]?.project;
+                    document.getElementById("description").value = rows[0]?.description;
+                    document.getElementById("agenda_endtime").value = rows[0]?.agenda_endtime.split('.')[0];
+                    document.getElementById("manager").value = rows[0]?.manager;
+                    document.getElementById("contributor").value = rows[0]?.contributor;
+                    document.getElementById("indicator").value = rows[0]?.indicator;
+                    document.getElementById("impact").value = rows[0]?.impact;
+                    document.getElementById("opening").value = rows[0]?.opening;
+                    document.getElementById("participants").value = rows[0]?.participants;
+                    document.getElementById("area").value = rows[0]?.area;
+                    document.getElementById("loc").value = rows[0]?.loc;
+                    document.getElementById("priority_participants").value = rows[0]?.priority_participants;
+                    document.getElementById("kbli").value = rows[0]?.kbli;
+                    document.getElementById("age").value = rows[0]?.age;
+                    document.getElementById("gender").value = rows[0]?.gender;
+                    document.getElementById("province").value = rows[0]?.province;
                 })
         }
 

@@ -47,7 +47,11 @@
 
           <div class="container-xxl flex-grow-1 container-p-y">
             <!-- DataTable with Buttons -->
+            <p> 
+              <button class="btn btn-primary" onclick="window.location.href='/sk_add'"> Tambah </button> 
+           </p>
             <div class="card">
+
               <div class="card-datatable table-responsive p-5">
                 <table id="sk" class="display" style="width: 100%;">
                   <thead>
@@ -128,7 +132,7 @@
             "data": null,
             "render": function (data, type, row) {
               return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
-                <button class='delete-btn btn btn-danger' data-id='${row.id} style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
+                <button class='delete-btn btn btn-danger' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
             }
           }
         ],

@@ -215,6 +215,16 @@ apps.post('/updatevideo', db.updatevideos);
 
 apps.get('/deletevideo/:id', db.deletevideo);
 
+apps.get('/api_sk', db.sk);
+
+apps.get('/api_sk_detail/:id', db.sk_detail);
+
+apps.post('/insertsk', db.insertsk);
+
+apps.post('/updatesk', db.updatesk);
+
+apps.get('/deletesk/:id', db.deletesk);
+
 apps.get('/api_users', db.users);
 
 apps.get('/api_usersroles', db.userroles);
@@ -224,6 +234,12 @@ apps.get('/api_detailusers/:id', db.detailsusers);
 apps.get('/api_agenda', db.agenda);
 
 apps.get('/api_detailagenda/:id', db.agendadetail);
+
+apps.post('/insertagenda', db.insertagenda);
+
+apps.post('/updateagenda', db.updateagenda);
+
+apps.get('/deleteagenda/:id', db.deleteagenda);
 
 apps.get('/api_files', db.files);
 
