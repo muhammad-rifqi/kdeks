@@ -253,7 +253,7 @@ apps.post('/insertfiles', files_path.single('file_data'), db.insertfileupload);
 
 apps.post('/updatefileupload', files_path.single('file_data'), db.updatefileupload);
 
-apps.get('/deletefilesupload/:id/:file' , db.deletefileupload);
+apps.get('/elibrary_delete/:id/:file' , db.deletefileupload);
 
 apps.get('/api_about', db.abouts);
 

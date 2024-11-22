@@ -628,7 +628,7 @@ const insertagenda = async (req, res) => {
     const time_datetime = date + ' ' + time;
     const agenda_datetime = req.body.agenda_datetime.replace("T", " ");
     const sql = await executeQuery("insert into agendas(title,title_en,url, agenda_datetime ,place,organizer, link, project , description, agenda_endtime, manager, contributor, indicator, impact, opening, participants, area, loc,priority_participants,kbli, age, gender, province, created_at, updated_at,web_identity) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.url, agenda_datetime, req.body.place, req.body.organizer, req.body.link, req.body.project, req.body.description, req.body.agenda_endtime, req.body.manager, req.body.contributor, req.body.indicator, req.body.impact, req.body.opening, req.body.participants, req.body.area, req.body.loc, req.body.priority_participants, req.body.kbli, req.body.age, req.body.gender, req.body.province, time_datetime, time_datetime,'kdeks']);
+        [req.body.title, req.body.title_en, req.body.url, agenda_datetime, req.body.place, req.body.organizer, req.body.link, req.body.project, req.body.description, req.body.agenda_endtime, req.body.manager, req.body.contributor, req.body.indicator, req.body.impact, req.body.opening, req.body.participants, req.body.area, req.body.loc, req.body.priority_participants, req.body.kbli, req.body.age, req.body.gender, req.body.province, time_datetime, time_datetime, 'kdeks']);
     if (sql) {
         res.redirect('/agenda');
     } else {
@@ -674,7 +674,26 @@ const deleteagenda = async (req, res) => {
 const files = async (req, res) => {
     const sql = await executeQuery("SELECT * FROM  reports where web_identity = 'kdeks'");
     if (sql?.length > 0) {
-        res.status(200).json(sql)
+        const array = [];
+        sql?.forEach((items, index) => {
+            const bbb = {
+                "id": items?.id,
+                "title": items?.title,
+                "date": items?.date,
+                "file": items?.file,
+                "content": items?.content,
+                "is_publish": items?.is_publish,
+                "created_at": items?.created_at,
+                "updated_at": items?.updated_at,
+                "deleted_at": items?.deleted_at,
+                "report_category_id": items?.report_category_id,
+                "title_en": items?.title_en,
+                "content_en": items?.content_en,
+                "fl": items?.file?.split('/')[5]
+            };
+            array.push(bbb);
+        })
+        res.status(200).json(array)
     } else {
         res.status(200).json({ "success": false })
     }

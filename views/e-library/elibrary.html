@@ -118,7 +118,7 @@
   <script>
     $(document).ready(function () {
       // 2. Inisialisasi DataTable
-      $('#news').DataTable({
+      $('#elibrary').DataTable({
         "ajax": {
           "url": "/api_files",
           "dataSrc": ""
@@ -132,7 +132,7 @@
             "data": null,
             "render": function (data, type, row) {
               return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
-                                <button class='delete-btn btn btn-danger' data-id='${row.id}' data-foto='${row.image}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
+                                <button class='delete-btn btn btn-danger' data-id='${row.id}' data-files='${row.fl}' style="padding:2px; float: left; margin: 2px">Delete</button></p>`;
             }
           }
         ],
@@ -152,11 +152,11 @@
         window.location.href = '/elibrary_edit/' + id;
       });
 
-      $('#news').on('click', '.delete-btn', function () {
+      $('#elibrary').on('click', '.delete-btn', function () {
         var id = $(this).data('id');
-        var foto = $(this).data('foto');
+        var file = $(this).data('files');
         if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
-          window.location.href = '/elibrary_delete/' + id + '/' + foto;
+          window.location.href = '/elibrary_delete/' + id + '/' + file;
         }
       });
     });

@@ -100,7 +100,7 @@
                                                     <div class="col-lg-12 mb-4">
                                                         <label class="form-label">File Upload</label>
                                                         <input class="form-control" name="file_data" id="file_data"
-                                                            type="file" accept="application/pdf" required>
+                                                            type="file" accept="application/pdf">
                                                     </div>
 
                                                     <div class="col-lg-12 mb-4">
@@ -201,7 +201,7 @@
                         document.getElementById("is_publish").setAttribute('checked', false);
                     }
                     document.getElementById("date").value = rows[0]?.date.split('.')[0];
-                    document.getElementById("previews").innerHTML = `https://webdev.rifhandi.com/uploads/fileupload/${rows[0]?.file}`;
+                    document.getElementById("previews").innerHTML = `https://kdeks.rifhandi.com/uploads/fileupload/${rows[0]?.file}`;
                 })
         }
 
