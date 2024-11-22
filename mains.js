@@ -23,7 +23,7 @@ let storages = multer.diskStorage(
     {
         destination: './public/uploads/news/',
         filename: function (req, file, cb) {
-            cb(null, file.originalname.replace(" ",""));
+            cb(null, file.originalname.replace(" ", ""));
         }
     }
 );
@@ -33,7 +33,7 @@ let disks = multer.diskStorage(
     {
         destination: './public/uploads/photo/',
         filename: function (req, file, cb) {
-            cb(null, file.originalname.replace(" ",""));
+            cb(null, file.originalname.replace(" ", ""));
         }
     }
 );
@@ -43,7 +43,7 @@ let drives = multer.diskStorage(
     {
         destination: './public/uploads/filesupload/',
         filename: function (req, file, cb) {
-            cb(null, file.originalname.replace(" ",""));
+            cb(null, file.originalname.replace(" ", ""));
         }
     }
 );
@@ -173,6 +173,14 @@ apps.get('/opini', (req, res) => {
     res.sendFile(path.resolve('./views/opini/opini.html'));
 })
 
+apps.get('/opini_add', (req, res) => {
+    res.sendFile(path.resolve('./views/opini/opini_add.html'));
+})
+
+apps.get('/opini_edit/:id', (req, res) => {
+    res.sendFile(path.resolve('./views/opini/opini_edit.html'));
+})
+
 //::::::::::::::: Api & Query DB AUTH ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 apps.get('/api_news', db.news);
@@ -193,11 +201,11 @@ apps.post('/insertnewscategory', db.insertnewscategory);
 
 apps.post('/updatenewscategory', db.updatenewscategory);
 
-apps.get('/deletenews_category/:id' , db.deletenewscategory);
+apps.get('/deletenews_category/:id', db.deletenewscategory);
 
 apps.get('/api_newsphoto', db.news_photo);
 
-apps.get('/deletephoto/:id/:foto' , db.deletephoto);
+apps.get('/deletephoto/:id/:foto', db.deletephoto);
 
 apps.post('/insertphoto', photo_path.single('photo'), db.insertphoto);
 
@@ -253,7 +261,7 @@ apps.post('/insertfiles', files_path.single('file_data'), db.insertfileupload);
 
 apps.post('/updatefileupload', files_path.single('file_data'), db.updatefileupload);
 
-apps.get('/elibrary_delete/:id/:file' , db.deletefileupload);
+apps.get('/elibrary_delete/:id/:file', db.deletefileupload);
 
 apps.get('/api_about', db.abouts);
 
@@ -266,6 +274,17 @@ apps.get('/api_history', db.history);
 apps.get('/api_detailhistory/:id', db.detailhistory);
 
 apps.post('/updatesejarah', db.updatehistory);
+
+apps.get('/api_opini', db.opini);
+
+apps.get('/api_opini_detail/:id', db.opini_detail);
+
+apps.post('/insertopini', db.insertopini);
+
+apps.post('/updateopini', db.updateopini);
+
+apps.get('/deleteopini/:id', db.deleteopini);
+
 
 apps.post('/act_login', db.do_login);
 
