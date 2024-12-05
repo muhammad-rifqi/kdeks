@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flaticon Webfont</title>
+    <link rel="stylesheet" type="text/css" href="flaticon_towngov.css"/>
+    <meta charset="UTF-8">
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            color: #5f7d95;
+        }
+
+        a {
+            color: #4AD295;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        [className^="flaticon-"]:before, [className*=" flaticon-"]:before, [className^="flaticon-"]:after, [className*=" flaticon-"]:after {
+            font-family: Flaticon;
+            font-size: 30px;
+            font-style: normal;
+            margin-left: 20px;
+            color: #333;
+        }
+
+        .wrapper {
+            max-width: 600px;
+            margin: auto;
+            padding: 0 1em;
+        }
+
+        .title {
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            padding: 24px;
+        }
+
+        header .logo {
+            width: 210px;
+            height: auto;
+            border: none;
+            display: inline-block;
+        }
+
+        header strong {
+            font-size: 28px;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+
+        .demo {
+            margin: 2em auto;
+            line-height: 1.25em;
+        }
+
+        .demo ul li {
+            margin-bottom: 12px;
+        }
+
+        .demo ul li code {
+            background-color: #1D262D;
+            border-radius: 3px;
+            padding: 12px;
+            display: inline-block;
+            color: #fff;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+            font-weight: lighter;
+            margin-top: 12px;
+            font-size: 13px;
+            word-break: break-all;
+        }
+
+        .demo ul li code .red {
+            color: #EC3A3B;
+        }
+
+        .demo ul li code .green {
+            color: #4AD295;
+        }
+
+        .demo ul li code .yellow {
+            color: #FFEEB6;
+        }
+
+        .demo ul li code .blue {
+            color: #2C8CF4;
+        }
+
+        .demo ul li code .purple {
+            color: #4949E7;
+        }
+
+        .demo ul li code .dots {
+            margin-top: 0.5em;
+            display: block;
+        }
+
+        #glyphs {
+            border-bottom: 1px solid #E3E9ED;
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        .glyph {
+            display: inline-block;
+            width: 9em;
+            margin: 1em;
+            text-align: center;
+            vertical-align: top;
+            background: #FFF;
+        }
+
+        .glyph .flaticon {
+            padding: 10px;
+            display: block;
+            font-family: "Flaticon";
+            font-size: 64px;
+            line-height: 1;
+        }
+
+        .glyph .flaticon:before {
+            font-size: 64px;
+            color: #5f7d95;
+            margin-left: 0;
+        }
+
+        .className-name {
+            font-size: 0.65em;
+            background-color: #E3E9ED;
+            color: #869FB2;
+            border-radius: 4px 4px 0 0;
+            padding: 0.5em;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+
+        .author-name {
+            font-size: 0.6em;
+            background-color: #EFF3F6;
+            border-top: 0;
+            border-radius: 0 0 4px 4px;
+            padding: 0.5em;
+        }
+
+        .author-name a {
+            color: #1D262D;
+        }
+
+        .className-name:last-child {
+            font-size: 10px;
+            color: #888;
+        }
+
+        .className-name:last-child a {
+            font-size: 10px;
+            color: #555;
+        }
+
+        .glyph > input {
+            display: block;
+            width: 100px;
+            margin: 5px auto;
+            text-align: center;
+            font-size: 12px;
+            cursor: text;
+        }
+
+        .glyph > input.icon-input {
+            font-family: "Flaticon";
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .attribution .title {
+            margin-top: 2em;
+        }
+
+        .attribution textarea {
+            background-color: #F8FAFB;
+            color: #1D262D;
+            padding: 1em;
+            border: none;
+            box-shadow: none;
+            border: 1px solid #E3E9ED;
+            border-radius: 4px;
+            resize: none;
+            width: 100%;
+            height: 150px;
+            font-size: 0.8em;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+            -webkit-appearance: none;
+        }
+
+        .attribution textarea:hover {
+            border-color: #CFD9E0;
+        }
+
+        .attribution textarea:focus {
+            border-color: #4AD295;
+        }
+
+        .iconsuse {
+            margin: 2em auto;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .iconsuse:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .iconsuse .image {
+            float: left;
+            width: 25%;
+            padding: 0 1em;
+        }
+
+        .iconsuse .image p {
+            margin-bottom: 1em;
+        }
+
+        .iconsuse .image span {
+            display: block;
+            font-size: 0.65em;
+            background-color: #222;
+            color: #fff;
+            border-radius: 4px;
+            padding: 0.5em;
+            color: #FFFF99;
+            margin-top: 1em;
+            font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+
+        .flaticon:before {
+            color: #5f7d95;
+        }
+
+        #footer {
+            text-align: center;
+            background-color: #1D262D;
+            color: #869FB2;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        #footer a {
+            font-weight: normal;
+        }
+
+        @media (max-width: 960px) {
+            .iconsuse .image {
+                width: 50%;
+            }
+        }
+
+        .preview {
+            width: 100px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .preview .inner {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background: #f5f5f5;
+            -webkit-border-radius: 3px 3px 0 0;
+            -moz-border-radius: 3px 3px 0 0;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .preview .inner  {
+            line-height: 85px;
+            font-size: 40px;
+            color: #333;
+        }
+
+        .label {
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 5px;
+            font-size: 10px;
+            font-family: Monaco, monospace;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            background: #ddd;
+            -webkit-border-radius: 0 0 3px 3px;
+            -moz-border-radius: 0 0 3px 3px;
+            border-radius: 0 0 3px 3px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://www.flaticon.com/" target="_blank" className="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 394.3 76.5">
+                <path d="M156.6,69.4H145.3V7.1h11.3Z" style="fill:#0e2a47"/>
+                <path d="M206.2,69.4h-11V64.8a15.4,15.4,0,0,1-12.6,5.7c-11.6,0-20.3-9.5-20.3-22.1s8.8-22.1,20.3-22.1a15.4,15.4,0,0,1,12.6,5.8V27.5h11Zm-32.4-21c0,6.4,4.2,11.6,10.8,11.6s10.8-4.9,10.8-11.6-4.4-11.6-10.8-11.6S173.9,42,173.9,48.4Z"
+                      style="fill:#0e2a47"/>
+                <path d="M262.5,13.7a7.2,7.2,0,0,1-14.4,0,7.2,7.2,0,1,1,14.4,0ZM261,69.4H249.6v-42H261Z"
+                      style="fill:#0e2a47"/>
+                <path id="_Trazado_" data-name="&lt;Trazado&gt;"
+                      d="M139.6,17.8a16.6,16.6,0,0,0-8-1.4c-3.2.4-4.9,2-4.9,5.9v5.1h13V37.5h-13v32H115.4v-32h-7.8v-10h7.8V22.2c0-9.9,5.2-16.3,15-16.3a23.4,23.4,0,0,1,9.3,1.8Z"
+                      style="fill:#0e2a47"/>
+                <path d="M235.1,60c-3.5,0-6.3-1.9-6.3-7.1V37.5H244v-10H228.8V15H217.5V27.5h-5.7v10h5.7V53.7c0,10.9,5.3,16.8,15.7,16.8A22.9,22.9,0,0,0,244,68l-4.3-9.1A12.3,12.3,0,0,1,235.1,60Z"
+                      style="fill:#0e2a47"/>
+                <path d="M348.9,48.4c0,12.6-9.7,22.1-22.7,22.1s-22.7-9.4-22.7-22.1,9.6-22.1,22.7-22.1S348.9,35.8,348.9,48.4Zm-33.9,0c0,6.8,4.8,11.6,11.1,11.6s11.2-4.8,11.2-11.6-4.8-11.6-11.2-11.6S315.1,41.6,315.1,48.4Z"
+                      style="fill:#0e2a47"/>
+                <path d="M394.3,42.7V69.4H382.9V46.3c0-6.1-3-9.4-8.2-9.4s-8.9,3.2-8.9,9.5v23H354.6v-42h11v4.9c3-4.5,7.6-6.1,12.3-6.1C387.5,26.3,394.3,33,394.3,42.7Z"
+                      style="fill:#0e2a47"/>
+                <path d="M298,55.7h0a12.4,12.4,0,0,1-8.2,4.2h-.9l-1.8-.2a10,10,0,0,1-7.4-5.6,13.2,13.2,0,0,1-1.2-5.8,13,13,0,0,1,1.3-5.9,10.1,10.1,0,0,1,7.5-5.5h2.4a11.7,11.7,0,0,1,8.3,4.2l5.5-9.6a19.9,19.9,0,0,0-8.1-4.3,23.4,23.4,0,0,0-6.1-.8,25.2,25.2,0,0,0-7.5,1.1,20.9,20.9,0,0,0-8,4.6,21.9,21.9,0,0,0-6.8,16.4,21.9,21.9,0,0,0,6.7,16.3,20.9,20.9,0,0,0,8,4.6,25.2,25.2,0,0,0,7.7,1.2,23.6,23.6,0,0,0,6.2-.8,20,20,0,0,0,8.1-4.4Z"
+                      style="fill:#0e2a47"/>
+                <path d="M46.3,26.5H26.9L20.8,16H52.4L61.6,0H9.4A9.3,9.3,0,0,0,1.3,4.7a9.3,9.3,0,0,0,0,9.4L34.6,71.8a9.4,9.4,0,0,0,16.2,0l1.1-1.9L36.6,43.3Z"
+                      style="fill:#4ad295"/>
+                <path d="M84.2,4.7A9.3,9.3,0,0,0,76.1,0H73.8l-25,43.3,9.2,16L84.2,14A9.3,9.3,0,0,0,84.2,4.7Z"
+                      style="fill:#4ad295"/>
+            </svg>
+        </a>
+    </header>
+    <section className="demo wrapper">
+
+        <p className="title">Webfont Instructions</p>
+
+        <ul>
+            <li>
+                <span className="num">1. </span>Copy the "Fonts" files and CSS files to your website CSS folder.
+            </li>
+            <li>
+                <span className="num">2. </span>Add the CSS link to your website source code on header.
+                <code className="big">
+                    &lt;<span className="red">head</span>&gt;
+                    <br/><span className="dots">...</span>
+                    <br/>&lt;<span className="red">link</span> <span className="green">rel</span>=<span
+                        className="yellow">"stylesheet"</span> <span className="green">type</span>=<span
+                        className="yellow">"text/css"</span> <span className="green">href</span>=<span className="yellow">"your_website_domain/css_root/flaticon_collection_name.css"</span>&gt;
+                    <br/><span className="dots">...</span>
+                    <br/>&lt;/<span className="red">head</span>&gt;
+                </code>
+            </li>
+
+            <li>
+                <p>
+                    <span className="num">3. </span>Use the icon className on <code>"<span className="blue">display</span>:<span
+                        className="purple"> inline</span>"</code> elements:
+                    <br/>
+                    Use example: <code>&lt;<span className="red">i</span> <span className="green">className</span>=<span className="yellow">&quot;flaticon-airplane49&quot;</span>&gt;&lt;/<span
+                        className="red">i</span>&gt;</code> or <code>&lt;<span className="red">span</span> <span
+                        className="green">className</span>=<span className="yellow">&quot;flaticon-airplane49&quot;</span>&gt;&lt;/<span
+                        className="red">span</span>&gt;</code>
+            </li>
+        </ul>
+
+    </section>
+    <section id="glyphs">
+            <div className="glyph">
+                <i className="flaticon flaticon-landscape"></i>
+                <div className="className-name">.flaticon-landscape</div>
+                <div className="author-name">Author: #author-link-flaticon-landscape# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-coverage"></i>
+                <div className="className-name">.flaticon-coverage</div>
+                <div className="author-name">Author: #author-link-flaticon-coverage# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-running-man"></i>
+                <div className="className-name">.flaticon-running-man</div>
+                <div className="author-name">Author: #author-link-flaticon-running-man# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-well"></i>
+                <div className="className-name">.flaticon-well</div>
+                <div className="author-name">Author: #author-link-flaticon-well# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-wind-farm"></i>
+                <div className="className-name">.flaticon-wind-farm</div>
+                <div className="author-name">Author: #author-link-flaticon-wind-farm# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-barn"></i>
+                <div className="className-name">.flaticon-barn</div>
+                <div className="author-name">Author: #author-link-flaticon-barn# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-mill"></i>
+                <div className="className-name">.flaticon-mill</div>
+                <div className="author-name">Author: #author-link-flaticon-mill# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-barn-1"></i>
+                <div className="className-name">.flaticon-barn-1</div>
+                <div className="author-name">Author: #author-link-flaticon-barn-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-farmer"></i>
+                <div className="className-name">.flaticon-farmer</div>
+                <div className="author-name">Author: #author-link-flaticon-farmer# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-fire-extinguisher"></i>
+                <div className="className-name">.flaticon-fire-extinguisher</div>
+                <div className="author-name">Author: #author-link-flaticon-fire-extinguisher# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-free-wifi"></i>
+                <div className="className-name">.flaticon-free-wifi</div>
+                <div className="author-name">Author: #author-link-flaticon-free-wifi# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-placeholder"></i>
+                <div className="className-name">.flaticon-placeholder</div>
+                <div className="author-name">Author: #author-link-flaticon-placeholder# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-public-transport"></i>
+                <div className="className-name">.flaticon-public-transport</div>
+                <div className="author-name">Author: #author-link-flaticon-public-transport# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-card-payment"></i>
+                <div className="className-name">.flaticon-card-payment</div>
+                <div className="author-name">Author: #author-link-flaticon-card-payment# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-traffic-light"></i>
+                <div className="className-name">.flaticon-traffic-light</div>
+                <div className="author-name">Author: #author-link-flaticon-traffic-light# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-highway"></i>
+                <div className="className-name">.flaticon-highway</div>
+                <div className="author-name">Author: #author-link-flaticon-highway# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-watering"></i>
+                <div className="className-name">.flaticon-watering</div>
+                <div className="author-name">Author: #author-link-flaticon-watering# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-high-speed-train"></i>
+                <div className="className-name">.flaticon-high-speed-train</div>
+                <div className="author-name">Author: #author-link-flaticon-high-speed-train# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-police"></i>
+                <div className="className-name">.flaticon-police</div>
+                <div className="author-name">Author: #author-link-flaticon-police# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-police-badge"></i>
+                <div className="className-name">.flaticon-police-badge</div>
+                <div className="author-name">Author: #author-link-flaticon-police-badge# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-security-camera"></i>
+                <div className="className-name">.flaticon-security-camera</div>
+                <div className="author-name">Author: #author-link-flaticon-security-camera# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-barn-2"></i>
+                <div className="className-name">.flaticon-barn-2</div>
+                <div className="author-name">Author: #author-link-flaticon-barn-2# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-professor"></i>
+                <div className="className-name">.flaticon-professor</div>
+                <div className="author-name">Author: #author-link-flaticon-professor# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-file-download"></i>
+                <div className="className-name">.flaticon-file-download</div>
+                <div className="author-name">Author: #author-link-flaticon-file-download# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-delivery-note"></i>
+                <div className="className-name">.flaticon-delivery-note</div>
+                <div className="author-name">Author: #author-link-flaticon-delivery-note# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-envelope"></i>
+                <div className="className-name">.flaticon-envelope</div>
+                <div className="author-name">Author: #author-link-flaticon-envelope# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-envelope-1"></i>
+                <div className="className-name">.flaticon-envelope-1</div>
+                <div className="author-name">Author: #author-link-flaticon-envelope-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-envelope-2"></i>
+                <div className="className-name">.flaticon-envelope-2</div>
+                <div className="author-name">Author: #author-link-flaticon-envelope-2# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-team"></i>
+                <div className="className-name">.flaticon-team</div>
+                <div className="author-name">Author: #author-link-flaticon-team# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-helping-hand"></i>
+                <div className="className-name">.flaticon-helping-hand</div>
+                <div className="author-name">Author: #author-link-flaticon-helping-hand# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-education"></i>
+                <div className="className-name">.flaticon-education</div>
+                <div className="author-name">Author: #author-link-flaticon-education# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-book"></i>
+                <div className="className-name">.flaticon-book</div>
+                <div className="author-name">Author: #author-link-flaticon-book# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-music-instrument"></i>
+                <div className="className-name">.flaticon-music-instrument</div>
+                <div className="author-name">Author: #author-link-flaticon-music-instrument# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-earth-globe"></i>
+                <div className="className-name">.flaticon-earth-globe</div>
+                <div className="author-name">Author: #author-link-flaticon-earth-globe# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-public-transport-1"></i>
+                <div className="className-name">.flaticon-public-transport-1</div>
+                <div className="author-name">Author: #author-link-flaticon-public-transport-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-gas"></i>
+                <div className="className-name">.flaticon-gas</div>
+                <div className="author-name">Author: #author-link-flaticon-gas# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-gym"></i>
+                <div className="className-name">.flaticon-gym</div>
+                <div className="author-name">Author: #author-link-flaticon-gym# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-investment"></i>
+                <div className="className-name">.flaticon-investment</div>
+                <div className="author-name">Author: #author-link-flaticon-investment# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-travel"></i>
+                <div className="className-name">.flaticon-travel</div>
+                <div className="author-name">Author: #author-link-flaticon-travel# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-verification"></i>
+                <div className="className-name">.flaticon-verification</div>
+                <div className="author-name">Author: #author-link-flaticon-verification# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-university"></i>
+                <div className="className-name">.flaticon-university</div>
+                <div className="author-name">Author: #author-link-flaticon-university# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-medal"></i>
+                <div className="className-name">.flaticon-medal</div>
+                <div className="author-name">Author: #author-link-flaticon-medal# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-barn-3"></i>
+                <div className="className-name">.flaticon-barn-3</div>
+                <div className="author-name">Author: #author-link-flaticon-barn-3# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-windmill"></i>
+                <div className="className-name">.flaticon-windmill</div>
+                <div className="author-name">Author: #author-link-flaticon-windmill# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-tribune"></i>
+                <div className="className-name">.flaticon-tribune</div>
+                <div className="author-name">Author: #author-link-flaticon-tribune# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-police-badge-1"></i>
+                <div className="className-name">.flaticon-police-badge-1</div>
+                <div className="author-name">Author: #author-link-flaticon-police-badge-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-hospital"></i>
+                <div className="className-name">.flaticon-hospital</div>
+                <div className="author-name">Author: #author-link-flaticon-hospital# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-train"></i>
+                <div className="className-name">.flaticon-train</div>
+                <div className="author-name">Author: #author-link-flaticon-train# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-train-1"></i>
+                <div className="className-name">.flaticon-train-1</div>
+                <div className="author-name">Author: #author-link-flaticon-train-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-reading"></i>
+                <div className="className-name">.flaticon-reading</div>
+                <div className="author-name">Author: #author-link-flaticon-reading# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-students"></i>
+                <div className="className-name">.flaticon-students</div>
+                <div className="author-name">Author: #author-link-flaticon-students# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-search-interface-symbol"></i>
+                <div className="className-name">.flaticon-search-interface-symbol</div>
+                <div className="author-name">Author: #author-link-flaticon-search-interface-symbol# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-magnifying-glass"></i>
+                <div className="className-name">.flaticon-magnifying-glass</div>
+                <div className="author-name">Author: #author-link-flaticon-magnifying-glass# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-gardening"></i>
+                <div className="className-name">.flaticon-gardening</div>
+                <div className="author-name">Author: #author-link-flaticon-gardening# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-terrace"></i>
+                <div className="className-name">.flaticon-terrace</div>
+                <div className="author-name">Author: #author-link-flaticon-terrace# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-doctor"></i>
+                <div className="className-name">.flaticon-doctor</div>
+                <div className="author-name">Author: #author-link-flaticon-doctor# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-cityscape"></i>
+                <div className="className-name">.flaticon-cityscape</div>
+                <div className="author-name">Author: #author-link-flaticon-cityscape# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-government"></i>
+                <div className="className-name">.flaticon-government</div>
+                <div className="author-name">Author: #author-link-flaticon-government# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-temple"></i>
+                <div className="className-name">.flaticon-temple</div>
+                <div className="author-name">Author: #author-link-flaticon-temple# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-pagoda"></i>
+                <div className="className-name">.flaticon-pagoda</div>
+                <div className="author-name">Author: #author-link-flaticon-pagoda# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-chinese"></i>
+                <div className="className-name">.flaticon-chinese</div>
+                <div className="author-name">Author: #author-link-flaticon-chinese# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-temple-1"></i>
+                <div className="className-name">.flaticon-temple-1</div>
+                <div className="author-name">Author: #author-link-flaticon-temple-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-solar-panel"></i>
+                <div className="className-name">.flaticon-solar-panel</div>
+                <div className="author-name">Author: #author-link-flaticon-solar-panel# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-solar-panels"></i>
+                <div className="className-name">.flaticon-solar-panels</div>
+                <div className="author-name">Author: #author-link-flaticon-solar-panels# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-lake"></i>
+                <div className="className-name">.flaticon-lake</div>
+                <div className="author-name">Author: #author-link-flaticon-lake# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-lake-1"></i>
+                <div className="className-name">.flaticon-lake-1</div>
+                <div className="author-name">Author: #author-link-flaticon-lake-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-travel-luggage"></i>
+                <div className="className-name">.flaticon-travel-luggage</div>
+                <div className="author-name">Author: #author-link-flaticon-travel-luggage# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-road"></i>
+                <div className="className-name">.flaticon-road</div>
+                <div className="author-name">Author: #author-link-flaticon-road# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-helmet"></i>
+                <div className="className-name">.flaticon-helmet</div>
+                <div className="author-name">Author: #author-link-flaticon-helmet# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-oil-pump"></i>
+                <div className="className-name">.flaticon-oil-pump</div>
+                <div className="author-name">Author: #author-link-flaticon-oil-pump# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-barrel"></i>
+                <div className="className-name">.flaticon-barrel</div>
+                <div className="author-name">Author: #author-link-flaticon-barrel# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-valve"></i>
+                <div className="className-name">.flaticon-valve</div>
+                <div className="author-name">Author: #author-link-flaticon-valve# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-oil-industry"></i>
+                <div className="className-name">.flaticon-oil-industry</div>
+                <div className="author-name">Author: #author-link-flaticon-oil-industry# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-oil-mining"></i>
+                <div className="className-name">.flaticon-oil-mining</div>
+                <div className="author-name">Author: #author-link-flaticon-oil-mining# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-balance"></i>
+                <div className="className-name">.flaticon-balance</div>
+                <div className="author-name">Author: #author-link-flaticon-balance# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-auction"></i>
+                <div className="className-name">.flaticon-auction</div>
+                <div className="author-name">Author: #author-link-flaticon-auction# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-portfolio"></i>
+                <div className="className-name">.flaticon-portfolio</div>
+                <div className="author-name">Author: #author-link-flaticon-portfolio# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-briefcase"></i>
+                <div className="className-name">.flaticon-briefcase</div>
+                <div className="author-name">Author: #author-link-flaticon-briefcase# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-handshake"></i>
+                <div className="className-name">.flaticon-handshake</div>
+                <div className="author-name">Author: #author-link-flaticon-handshake# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-online-shop"></i>
+                <div className="className-name">.flaticon-online-shop</div>
+                <div className="author-name">Author: #author-link-flaticon-online-shop# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-bank"></i>
+                <div className="className-name">.flaticon-bank</div>
+                <div className="author-name">Author: #author-link-flaticon-bank# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-suitcase"></i>
+                <div className="className-name">.flaticon-suitcase</div>
+                <div className="author-name">Author: #author-link-flaticon-suitcase# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-bus"></i>
+                <div className="className-name">.flaticon-bus</div>
+                <div className="author-name">Author: #author-link-flaticon-bus# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-lotus"></i>
+                <div className="className-name">.flaticon-lotus</div>
+                <div className="author-name">Author: #author-link-flaticon-lotus# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-balance-1"></i>
+                <div className="className-name">.flaticon-balance-1</div>
+                <div className="author-name">Author: #author-link-flaticon-balance-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-agriculture"></i>
+                <div className="className-name">.flaticon-agriculture</div>
+                <div className="author-name">Author: #author-link-flaticon-agriculture# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-factory"></i>
+                <div className="className-name">.flaticon-factory</div>
+                <div className="author-name">Author: #author-link-flaticon-factory# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-businessman"></i>
+                <div className="className-name">.flaticon-businessman</div>
+                <div className="author-name">Author: #author-link-flaticon-businessman# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-briefcase-1"></i>
+                <div className="className-name">.flaticon-briefcase-1</div>
+                <div className="author-name">Author: #author-link-flaticon-briefcase-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-clinic"></i>
+                <div className="className-name">.flaticon-clinic</div>
+                <div className="author-name">Author: #author-link-flaticon-clinic# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-question"></i>
+                <div className="className-name">.flaticon-question</div>
+                <div className="author-name">Author: #author-link-flaticon-question# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-art"></i>
+                <div className="className-name">.flaticon-art</div>
+                <div className="author-name">Author: #author-link-flaticon-art# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-home"></i>
+                <div className="className-name">.flaticon-home</div>
+                <div className="author-name">Author: #author-link-flaticon-home# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-transportation"></i>
+                <div className="className-name">.flaticon-transportation</div>
+                <div className="author-name">Author: #author-link-flaticon-transportation# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-help"></i>
+                <div className="className-name">.flaticon-help</div>
+                <div className="author-name">Author: #author-link-flaticon-help# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-map"></i>
+                <div className="className-name">.flaticon-map</div>
+                <div className="author-name">Author: #author-link-flaticon-map# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-location-pin"></i>
+                <div className="className-name">.flaticon-location-pin</div>
+                <div className="author-name">Author: #author-link-flaticon-location-pin# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-file"></i>
+                <div className="className-name">.flaticon-file</div>
+                <div className="author-name">Author: #author-link-flaticon-file# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-file-1"></i>
+                <div className="className-name">.flaticon-file-1</div>
+                <div className="author-name">Author: #author-link-flaticon-file-1# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-industry"></i>
+                <div className="className-name">.flaticon-industry</div>
+                <div className="author-name">Author: #author-link-flaticon-industry# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-quote"></i>
+                <div className="className-name">.flaticon-quote</div>
+                <div className="author-name">Author: #author-link-flaticon-quote# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-email"></i>
+                <div className="className-name">.flaticon-email</div>
+                <div className="author-name">Author: #author-link-flaticon-email# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-envelope-3"></i>
+                <div className="className-name">.flaticon-envelope-3</div>
+                <div className="author-name">Author: #author-link-flaticon-envelope-3# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-parthenon"></i>
+                <div className="className-name">.flaticon-parthenon</div>
+                <div className="author-name">Author: #author-link-flaticon-parthenon# </div>
+            </div>
+
+            <div className="glyph">
+                <i className="flaticon flaticon-pdf"></i>
+                <div className="className-name">.flaticon-pdf</div>
+                <div className="author-name">Author: #author-link-flaticon-pdf# </div>
+            </div>
+
+    </section>
+
+    <section className="attribution wrapper"   style="text-align:center;">
+
+        <div className="title">License and attribution:</div><div className="attrDiv">Font generated by <a href="https://www.flaticon.com">flaticon.com</a>. <div>#allAuthorLinksCC# #allAuthorLinksBasic# </div>
+        </div>
+        <div className="title">Copy the Attribution License:</div>
+
+        <textarea onclick="this.focus();this.select();">Font generated by &lt;a href=&quot;https://www.flaticon.com&quot;&gt;flaticon.com&lt;/a&gt;. #allAuthorLinksCC# #allAuthorLinksBasic#
+        </textarea>
+
+    </section>
+
+    <section className="iconsuse">
+
+        <div className="title">Examples:</div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-landscape"></i>
+                    <span>&lt;i className=&quot;flaticon-landscape&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-coverage"></i>
+                    <span>&lt;i className=&quot;flaticon-coverage&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-running-man"></i>
+                    <span>&lt;i className=&quot;flaticon-running-man&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-well"></i>
+                    <span>&lt;i className=&quot;flaticon-well&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-wind-farm"></i>
+                    <span>&lt;i className=&quot;flaticon-wind-farm&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-barn"></i>
+                    <span>&lt;i className=&quot;flaticon-barn&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-mill"></i>
+                    <span>&lt;i className=&quot;flaticon-mill&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-barn-1"></i>
+                    <span>&lt;i className=&quot;flaticon-barn-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-farmer"></i>
+                    <span>&lt;i className=&quot;flaticon-farmer&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-fire-extinguisher"></i>
+                    <span>&lt;i className=&quot;flaticon-fire-extinguisher&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-free-wifi"></i>
+                    <span>&lt;i className=&quot;flaticon-free-wifi&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-placeholder"></i>
+                    <span>&lt;i className=&quot;flaticon-placeholder&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-public-transport"></i>
+                    <span>&lt;i className=&quot;flaticon-public-transport&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-card-payment"></i>
+                    <span>&lt;i className=&quot;flaticon-card-payment&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-traffic-light"></i>
+                    <span>&lt;i className=&quot;flaticon-traffic-light&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-highway"></i>
+                    <span>&lt;i className=&quot;flaticon-highway&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-watering"></i>
+                    <span>&lt;i className=&quot;flaticon-watering&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-high-speed-train"></i>
+                    <span>&lt;i className=&quot;flaticon-high-speed-train&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-police"></i>
+                    <span>&lt;i className=&quot;flaticon-police&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-police-badge"></i>
+                    <span>&lt;i className=&quot;flaticon-police-badge&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-security-camera"></i>
+                    <span>&lt;i className=&quot;flaticon-security-camera&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-barn-2"></i>
+                    <span>&lt;i className=&quot;flaticon-barn-2&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-professor"></i>
+                    <span>&lt;i className=&quot;flaticon-professor&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-file-download"></i>
+                    <span>&lt;i className=&quot;flaticon-file-download&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-delivery-note"></i>
+                    <span>&lt;i className=&quot;flaticon-delivery-note&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-envelope"></i>
+                    <span>&lt;i className=&quot;flaticon-envelope&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-envelope-1"></i>
+                    <span>&lt;i className=&quot;flaticon-envelope-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-envelope-2"></i>
+                    <span>&lt;i className=&quot;flaticon-envelope-2&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-team"></i>
+                    <span>&lt;i className=&quot;flaticon-team&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-helping-hand"></i>
+                    <span>&lt;i className=&quot;flaticon-helping-hand&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-education"></i>
+                    <span>&lt;i className=&quot;flaticon-education&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-book"></i>
+                    <span>&lt;i className=&quot;flaticon-book&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-music-instrument"></i>
+                    <span>&lt;i className=&quot;flaticon-music-instrument&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-earth-globe"></i>
+                    <span>&lt;i className=&quot;flaticon-earth-globe&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-public-transport-1"></i>
+                    <span>&lt;i className=&quot;flaticon-public-transport-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-gas"></i>
+                    <span>&lt;i className=&quot;flaticon-gas&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-gym"></i>
+                    <span>&lt;i className=&quot;flaticon-gym&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-investment"></i>
+                    <span>&lt;i className=&quot;flaticon-investment&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-travel"></i>
+                    <span>&lt;i className=&quot;flaticon-travel&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-verification"></i>
+                    <span>&lt;i className=&quot;flaticon-verification&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-university"></i>
+                    <span>&lt;i className=&quot;flaticon-university&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-medal"></i>
+                    <span>&lt;i className=&quot;flaticon-medal&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-barn-3"></i>
+                    <span>&lt;i className=&quot;flaticon-barn-3&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-windmill"></i>
+                    <span>&lt;i className=&quot;flaticon-windmill&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-tribune"></i>
+                    <span>&lt;i className=&quot;flaticon-tribune&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-police-badge-1"></i>
+                    <span>&lt;i className=&quot;flaticon-police-badge-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-hospital"></i>
+                    <span>&lt;i className=&quot;flaticon-hospital&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-train"></i>
+                    <span>&lt;i className=&quot;flaticon-train&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-train-1"></i>
+                    <span>&lt;i className=&quot;flaticon-train-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-reading"></i>
+                    <span>&lt;i className=&quot;flaticon-reading&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-students"></i>
+                    <span>&lt;i className=&quot;flaticon-students&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-search-interface-symbol"></i>
+                    <span>&lt;i className=&quot;flaticon-search-interface-symbol&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-magnifying-glass"></i>
+                    <span>&lt;i className=&quot;flaticon-magnifying-glass&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-gardening"></i>
+                    <span>&lt;i className=&quot;flaticon-gardening&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-terrace"></i>
+                    <span>&lt;i className=&quot;flaticon-terrace&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-doctor"></i>
+                    <span>&lt;i className=&quot;flaticon-doctor&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-cityscape"></i>
+                    <span>&lt;i className=&quot;flaticon-cityscape&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-government"></i>
+                    <span>&lt;i className=&quot;flaticon-government&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-temple"></i>
+                    <span>&lt;i className=&quot;flaticon-temple&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-pagoda"></i>
+                    <span>&lt;i className=&quot;flaticon-pagoda&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-chinese"></i>
+                    <span>&lt;i className=&quot;flaticon-chinese&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-temple-1"></i>
+                    <span>&lt;i className=&quot;flaticon-temple-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-solar-panel"></i>
+                    <span>&lt;i className=&quot;flaticon-solar-panel&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-solar-panels"></i>
+                    <span>&lt;i className=&quot;flaticon-solar-panels&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-lake"></i>
+                    <span>&lt;i className=&quot;flaticon-lake&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-lake-1"></i>
+                    <span>&lt;i className=&quot;flaticon-lake-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-travel-luggage"></i>
+                    <span>&lt;i className=&quot;flaticon-travel-luggage&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-road"></i>
+                    <span>&lt;i className=&quot;flaticon-road&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-helmet"></i>
+                    <span>&lt;i className=&quot;flaticon-helmet&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-oil-pump"></i>
+                    <span>&lt;i className=&quot;flaticon-oil-pump&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-barrel"></i>
+                    <span>&lt;i className=&quot;flaticon-barrel&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-valve"></i>
+                    <span>&lt;i className=&quot;flaticon-valve&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-oil-industry"></i>
+                    <span>&lt;i className=&quot;flaticon-oil-industry&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-oil-mining"></i>
+                    <span>&lt;i className=&quot;flaticon-oil-mining&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-balance"></i>
+                    <span>&lt;i className=&quot;flaticon-balance&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-auction"></i>
+                    <span>&lt;i className=&quot;flaticon-auction&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-portfolio"></i>
+                    <span>&lt;i className=&quot;flaticon-portfolio&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-briefcase"></i>
+                    <span>&lt;i className=&quot;flaticon-briefcase&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-handshake"></i>
+                    <span>&lt;i className=&quot;flaticon-handshake&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-online-shop"></i>
+                    <span>&lt;i className=&quot;flaticon-online-shop&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-bank"></i>
+                    <span>&lt;i className=&quot;flaticon-bank&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-suitcase"></i>
+                    <span>&lt;i className=&quot;flaticon-suitcase&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-bus"></i>
+                    <span>&lt;i className=&quot;flaticon-bus&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-lotus"></i>
+                    <span>&lt;i className=&quot;flaticon-lotus&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-balance-1"></i>
+                    <span>&lt;i className=&quot;flaticon-balance-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-agriculture"></i>
+                    <span>&lt;i className=&quot;flaticon-agriculture&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-factory"></i>
+                    <span>&lt;i className=&quot;flaticon-factory&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-businessman"></i>
+                    <span>&lt;i className=&quot;flaticon-businessman&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-briefcase-1"></i>
+                    <span>&lt;i className=&quot;flaticon-briefcase-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-clinic"></i>
+                    <span>&lt;i className=&quot;flaticon-clinic&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-question"></i>
+                    <span>&lt;i className=&quot;flaticon-question&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-art"></i>
+                    <span>&lt;i className=&quot;flaticon-art&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-home"></i>
+                    <span>&lt;i className=&quot;flaticon-home&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-transportation"></i>
+                    <span>&lt;i className=&quot;flaticon-transportation&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-help"></i>
+                    <span>&lt;i className=&quot;flaticon-help&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-map"></i>
+                    <span>&lt;i className=&quot;flaticon-map&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-location-pin"></i>
+                    <span>&lt;i className=&quot;flaticon-location-pin&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-file"></i>
+                    <span>&lt;i className=&quot;flaticon-file&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-file-1"></i>
+                    <span>&lt;i className=&quot;flaticon-file-1&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-industry"></i>
+                    <span>&lt;i className=&quot;flaticon-industry&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-quote"></i>
+                    <span>&lt;i className=&quot;flaticon-quote&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-email"></i>
+                    <span>&lt;i className=&quot;flaticon-email&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-envelope-3"></i>
+                    <span>&lt;i className=&quot;flaticon-envelope-3&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-parthenon"></i>
+                    <span>&lt;i className=&quot;flaticon-parthenon&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            <div className="image">
+                <p>
+                    <i className="flaticon flaticon-pdf"></i>
+                    <span>&lt;i className=&quot;flaticon-pdf&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="footer">
+        <div>Generated by <a href="https://www.flaticon.com">flaticon.com</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -18,10 +18,28 @@ const do_login = async (req, res) => {
         res.cookie("name", sql[0]?.name);
         res.redirect("/dashboard");
     } else {
+        
         res.redirect("/");
-    }
+    } 
 
 }
+
+// const do_login = async (req, res) => {
+//     const email = req?.body?.email;
+//     const password = md5(req?.body?.password);
+//     const sql = await executeQuery('SELECT * FROM users where email = $1 AND password = $2 ', [email, password])
+//     if (sql?.length > 0) {
+//         const isLogin = true;
+//         res.cookie("islogin", isLogin);
+//         res.cookie("id", sql[0]?.id);
+//         res.cookie("name", sql[0]?.name);
+//         res.redirect("/dashboard");
+//     } else {
+        
+//         res.redirect("/");
+//     } 
+
+// }
 
 const do_logout = (req, res) => {
     res.clearCookie("islogin");
