@@ -1,300 +1,269 @@
-<!doctype html>
-
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr"
-    data-theme="theme-default" data-/assets-path="/assets/" data-template="vertical-menu-template-no-customizer"
-    data-style="light">
+<!DOCTYPE html>
+<html lang="zxx">
 
 <head>
-    <script src="/layout/meta.js"></script>
-
-    <style>
-        div.dt-top-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-        }
-
-        div.dt-center-in-div {
-            margin: 0 auto;
-        }
-
-        div.dt-filter-spacer {
-            margin: 10px 0;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keyword" content="" />
+    <meta name="author" content="theme_ocean" />
+    <title>KDEKS BACKEND || Dashboard</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/dataTables.bs5.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/select2-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/theme.min.css" />
 
 </head>
 
 <body>
-    <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
-            <!-- Menu -->
-            <script src="/layout/nav.js"></script>
-
-            <!-- / Menu -->
-
-            <!-- Layout container -->
-            <div class="layout-page">
-                <!-- Navbar -->
-
-                <script src="/layout/nav2.js"></script>
-
-                <!-- / Navbar -->
-
-                <!-- Content wrapper -->
-                <div class="content-wrapper">
-                    <!-- Content -->
-
-                    <div class="container-xxl flex-grow-1 container-p-y">
-                        <!-- DataTable with Buttons -->
-                        <div class="card">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <form action="/updateagenda" method="post">
-                                        <input type="hidden" id="id" name="id" value="">
-                                        <div class="card stretch stretch-full">
-                                            <div class="card-body lead-status">
-                                                <div class="mb-5 d-flex align-items-center justify-content-between">
-                                                    <h5 class="fw-bold mb-0 me-4">
-                                                        <span class="d-block mb-2">Edit Agenda :</span>
-                                                        <span
-                                                            class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
-                                                            Edit
-                                                            Data Adenda Di Bawah Ini</span>
-                                                    </h5>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Title Indonesia</label>
-                                                        <input class="form-control" type="text" name="title" id="title"
-                                                            required>
-                                                    </div>
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Title English</label>
-                                                        <input class="form-control" type="text" name="title_en"
-                                                            id="title_en" required>
-                                                    </div>
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">URL</label>
-                                                        <input class="form-control" type="text" name="url" id="url"
-                                                            required>
-                                                    </div>
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Agenda Datetime</label>
-                                                        <input class="form-control" type="datetime-local"
-                                                            name="agenda_datetime" id="agenda_datetime" required>
-                                                    </div>
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Place</label>
-                                                        <input class="form-control" type="text" name="place" id="place"
-                                                            required>
-                                                    </div>
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Organizer</label>
-                                                        <input class="form-control" type="text" name="organizer"
-                                                            id="organizer" required>
-                                                    </div>
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Link Zoom</label>
-                                                        <input class="form-control" type="text" name="link" id="link"
-                                                            required>
-                                                    </div>
-            
-                                                     <!-- // ////////////////////////////////////////////////////////////////  -->
-                                                     <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Projek </label>
-                                                        <input class="form-control" type="text" name="project" id="project"
-                                                            required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Keterangan</label>
-                                                        <input class="form-control" type="text" name="description" id="description"
-                                                            required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Agenda Selesai</label>
-                                                        <input class="form-control" type="datetime-local" name="agenda_endtime"
-                                                            id="agenda_endtime" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Pengelola</label>
-                                                        <input class="form-control" type="text" name="manager" id="manager"
-                                                            required>
-                                                    </div>
-            
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Kontributor</label>
-                                                        <input class="form-control" type="text" name="contributor" id="contributor"
-                                                            required>
-                                                    </div>
-            
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Indikator</label>
-                                                        <input class="form-control" type="text" name="indicator" id="indicator"
-                                                            required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Impact</label>
-                                                        <input class="form-control" type="text" name="impact" id="impact" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Opening</label>
-                                                        <input class="form-control" type="text" name="opening" id="opening"
-                                                            required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Participants</label>
-                                                        <input class="form-control" type="text" name="participants"
-                                                            id="participants" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Area )* embed dari maps</label>
-                                                        <input class="form-control" type="text" name="area" id="area" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Level Of Content</label>
-                                                        <input class="form-control" type="text" name="loc" id="loc" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Priority Participants</label>
-                                                        <input class="form-control" type="text" name="priority_participants"
-                                                            id="priority_participants" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Kbli</label>
-                                                        <input class="form-control" type="text" name="kbli" id="kbli" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Usia Partisipan</label>
-                                                        <input class="form-control" type="text" name="age" id="age" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Gender</label>
-                                                        <input class="form-control" type="text" name="gender" id="gender" required>
-                                                    </div>
-            
-                                                    <div class="col-lg-12 mb-4">
-                                                        <label class="form-label">Province</label>
-                                                        <input class="form-control" type="text" name="province" id="province"
-                                                            required>
-                                                    </div>
-            
-            
-                                                    <!-- // ////////////////////////////////////////////////////////////////  -->
-                                                    <div class="col-lg-12 mb-4 text-left">
-                                                        <label class="form-label"></label>
-                                                        <button class="btn btn-primary" type="submit">Simpan</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+    <!--! ================================================================ !-->
+    <!--! [Start] Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <script src="/nav.js"></script>
+    <!--! ================================================================ !-->
+    <!--! [End]  Navigation Manu !-->
+    <!--! ================================================================ !-->
+    <!--! ================================================================ !-->
+    <!--! [Start] Header !-->
+    <!--! ================================================================ !-->
+    <script src="/header.js"></script>
+    <!--! ================================================================ !-->
+    <!--! [Start] Main Content !-->
+    <!--! ================================================================ !-->
+    <main class="nxl-container">
+        <div class="nxl-content">
+            <!-- [ page-header ] start -->
+            <script src="/breadchumb.js"></script>
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="/updateagenda" method="post">
+                            <input type="hidden" id="id" name="id" value="">
+                            <div class="card stretch stretch-full">
+                                <div class="card-body lead-status">
+                                    <div class="mb-5 d-flex align-items-center justify-content-between">
+                                        <h5 class="fw-bold mb-0 me-4">
+                                            <span class="d-block mb-2">Edit Agenda :</span>
+                                            <span
+                                                class="fs-12 fw-normal text-muted text-truncate-1-line">Silahkan
+                                                Edit
+                                                Data Adenda Di Bawah Ini</span>
+                                        </h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Title Indonesia</label>
+                                            <input class="form-control" type="text" name="title" id="title"
+                                                required>
                                         </div>
-                                    </form>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Title English</label>
+                                            <input class="form-control" type="text" name="title_en"
+                                                id="title_en" required>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">URL</label>
+                                            <input class="form-control" type="text" name="url" id="url"
+                                                required>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Agenda Datetime</label>
+                                            <input class="form-control" type="datetime-local"
+                                                name="agenda_datetime" id="agenda_datetime" required>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Place</label>
+                                            <input class="form-control" type="text" name="place" id="place"
+                                                required>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Organizer</label>
+                                            <input class="form-control" type="text" name="organizer"
+                                                id="organizer" required>
+                                        </div>
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Link Zoom</label>
+                                            <input class="form-control" type="text" name="link" id="link"
+                                                required>
+                                        </div>
+
+                                         <!-- // ////////////////////////////////////////////////////////////////  -->
+                                         <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Projek </label>
+                                            <input class="form-control" type="text" name="project" id="project"
+                                                required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Keterangan</label>
+                                            <input class="form-control" type="text" name="description" id="description"
+                                                required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Agenda Selesai</label>
+                                            <input class="form-control" type="datetime-local" name="agenda_endtime"
+                                                id="agenda_endtime" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Pengelola</label>
+                                            <input class="form-control" type="text" name="manager" id="manager"
+                                                required>
+                                        </div>
+
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Kontributor</label>
+                                            <input class="form-control" type="text" name="contributor" id="contributor"
+                                                required>
+                                        </div>
+
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Indikator</label>
+                                            <input class="form-control" type="text" name="indicator" id="indicator"
+                                                required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Impact</label>
+                                            <input class="form-control" type="text" name="impact" id="impact" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Opening</label>
+                                            <input class="form-control" type="text" name="opening" id="opening"
+                                                required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Participants</label>
+                                            <input class="form-control" type="text" name="participants"
+                                                id="participants" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Area )* embed dari maps</label>
+                                            <input class="form-control" type="text" name="area" id="area" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Level Of Content</label>
+                                            <input class="form-control" type="text" name="loc" id="loc" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Priority Participants</label>
+                                            <input class="form-control" type="text" name="priority_participants"
+                                                id="priority_participants" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Kbli</label>
+                                            <input class="form-control" type="text" name="kbli" id="kbli" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Usia Partisipan</label>
+                                            <input class="form-control" type="text" name="age" id="age" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Gender</label>
+                                            <input class="form-control" type="text" name="gender" id="gender" required>
+                                        </div>
+
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Province</label>
+                                            <input class="form-control" type="text" name="province" id="province"
+                                                required>
+                                        </div>
+
+
+                                        <!-- // ////////////////////////////////////////////////////////////////  -->
+                                        <div class="col-lg-12 mb-4 text-left">
+                                            <label class="form-label"></label>
+                                            <button class="btn btn-primary" type="submit">Simpan</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Modal to add new record -->
-
-                        <!--/ DataTable with Buttons -->
-
+                        </form>
                     </div>
-                    <!-- / Content -->
-
-                    <!-- Footer -->
-                    <footer class="content-footer footer bg-footer-theme">
-                        <div class="container-xxl">
-                            <div
-                                class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                                <div class="text-body mb-2 mb-md-0">
-                                    ©
-                                    <script>
-                                        document.write(new Date().getFullYear());
-                                    </script>
-                                    KDEKS
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- / Footer -->
-
-                    <div class="content-backdrop fade"></div>
                 </div>
-                <!-- Content wrapper -->
             </div>
-            <!-- / Layout page -->
+            <!-- [ Main Content ] end -->
         </div>
+        <!-- [ Footer ] start -->
+        <footer class="footer">
+            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+                <span>Copyright ©</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+            </div>
+        </footer>
+        <!-- [ Footer ] end -->
+    </main>
 
-        <!-- Overlay -->
-        <div class="layout-overlay layout-menu-toggle"></div>
-
-        <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-        <div class="drag-target"></div>
-    </div>
-    <!-- / Layout wrapper -->
-
-    <script src="/layout/footer.js"></script>
-
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-
-    <script>
-        window.addEventListener("load", async () => {
-            await getUrlById();
-        })
-
-        function getUrlById() {
-            const URLS = new URL(window.location.href);
-            fetch('/api_detailagenda/' + URLS.pathname.split('/')[2])
-                .then(data => data.json())
-                .then((rows) => {
-                    document.getElementById("id").value = rows[0]?.id;
-                    document.getElementById("title").value = rows[0]?.title;
-                    document.getElementById("title_en").value = rows[0]?.title_en;
-                    document.getElementById("url").value = rows[0]?.url;
-                    document.getElementById("place").value = rows[0]?.place;
-                    document.getElementById("organizer").value = rows[0]?.organizer;
-                    document.getElementById("agenda_datetime").value = rows[0]?.agenda_datetime.split('.')[0];
-                    document.getElementById("link").value = rows[0]?.link;
-                    document.getElementById("agenda_datetime").value = rows[0]?.agenda_datetime.split('.')[0];
-                    document.getElementById("project").value = rows[0]?.project;
-                    document.getElementById("description").value = rows[0]?.description;
-                    document.getElementById("agenda_endtime").value = rows[0]?.agenda_endtime.split('.')[0];
-                    document.getElementById("manager").value = rows[0]?.manager;
-                    document.getElementById("contributor").value = rows[0]?.contributor;
-                    document.getElementById("indicator").value = rows[0]?.indicator;
-                    document.getElementById("impact").value = rows[0]?.impact;
-                    document.getElementById("opening").value = rows[0]?.opening;
-                    document.getElementById("participants").value = rows[0]?.participants;
-                    document.getElementById("area").value = rows[0]?.area;
-                    document.getElementById("loc").value = rows[0]?.loc;
-                    document.getElementById("priority_participants").value = rows[0]?.priority_participants;
-                    document.getElementById("kbli").value = rows[0]?.kbli;
-                    document.getElementById("age").value = rows[0]?.age;
-                    document.getElementById("gender").value = rows[0]?.gender;
-                    document.getElementById("province").value = rows[0]?.province;
-                })
-        }
-
-    </script>
-
+    <script src="/assets/vendors/js/vendors.min.js"></script>
+    <script src="/assets/vendors/js/dataTables.min.js"></script>
+    <script src="/assets/vendors/js/dataTables.bs5.min.js"></script>
+    <script src="/assets/vendors/js/select2.min.js"></script>
+    <script src="/assets/vendors/js/select2-active.min.js"></script>
+    <script src="/assets/js/common-init.min.js"></script>
+    <script src="/assets/js/theme-customizer-init.min.js"></script>
 </body>
+
+
+<script>
+    window.addEventListener("load", async () => {
+        await getUrlById();
+    })
+
+    function getUrlById() {
+        const URLS = new URL(window.location.href);
+        fetch('/api_detailagenda/' + URLS.pathname.split('/')[2])
+            .then(data => data.json())
+            .then((rows) => {
+                document.getElementById("id").value = rows[0]?.id;
+                document.getElementById("title").value = rows[0]?.title;
+                document.getElementById("title_en").value = rows[0]?.title_en;
+                document.getElementById("url").value = rows[0]?.url;
+                document.getElementById("place").value = rows[0]?.place;
+                document.getElementById("organizer").value = rows[0]?.organizer;
+                document.getElementById("agenda_datetime").value = rows[0]?.agenda_datetime.split('.')[0];
+                document.getElementById("link").value = rows[0]?.link;
+                document.getElementById("agenda_datetime").value = rows[0]?.agenda_datetime.split('.')[0];
+                document.getElementById("project").value = rows[0]?.project;
+                document.getElementById("description").value = rows[0]?.description;
+                document.getElementById("agenda_endtime").value = rows[0]?.agenda_endtime.split('.')[0];
+                document.getElementById("manager").value = rows[0]?.manager;
+                document.getElementById("contributor").value = rows[0]?.contributor;
+                document.getElementById("indicator").value = rows[0]?.indicator;
+                document.getElementById("impact").value = rows[0]?.impact;
+                document.getElementById("opening").value = rows[0]?.opening;
+                document.getElementById("participants").value = rows[0]?.participants;
+                document.getElementById("area").value = rows[0]?.area;
+                document.getElementById("loc").value = rows[0]?.loc;
+                document.getElementById("priority_participants").value = rows[0]?.priority_participants;
+                document.getElementById("kbli").value = rows[0]?.kbli;
+                document.getElementById("age").value = rows[0]?.age;
+                document.getElementById("gender").value = rows[0]?.gender;
+                document.getElementById("province").value = rows[0]?.province;
+            })
+    }
+
+</script>
 
 </html>

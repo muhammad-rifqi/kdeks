@@ -1,117 +1,76 @@
-<!doctype html>
-
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact" dir="ltr"
-  data-theme="theme-default" data-/assets-path="/assets/" data-template="vertical-menu-template-no-customizer"
-  data-style="light">
+<!DOCTYPE html>
+<html lang="zxx">
 
 <head>
-  <script src="layout/meta.js"></script>
-
-  <style>
-    div.dt-top-container {
-      display: grid;
-      grid-template-columns: auto auto auto;
-    }
-
-    div.dt-center-in-div {
-      margin: 0 auto;
-    }
-
-    div.dt-filter-spacer {
-      margin: 10px 0;
-    }
-  </style>
-
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="keyword" content="" />
+  <meta name="author" content="theme_ocean" />
+  <title>KDEKS BACKEND || Dashboard</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/theme.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
 </head>
 
 <body>
-  <!-- Layout wrapper -->
-  <div class="layout-wrapper layout-content-navbar">
-    <div class="layout-container">
-      <!-- Menu -->
-      <script src="/layout/nav.js"></script>
-
-      <!-- / Menu -->
-
-      <!-- Layout container -->
-      <div class="layout-page">
-        <!-- Navbar -->
-
-        <script src="/layout/nav2.js"></script>
-
-        <!-- / Navbar -->
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
-
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <!-- DataTable with Buttons -->
-            <div class="card">
-              <div class="card-datatable table-responsive p-5">
-                <table id="sejarah" class="display" style="width: 100%;">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Title</th>
-                      <th>Title EN</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
-
-              </div>
-            </div>
-            <!-- Modal to add new record -->
-
-            <!--/ DataTable with Buttons -->
-
-          </div>
-          <!-- / Content -->
-
-          <!-- Footer -->
-          <footer class="content-footer footer bg-footer-theme">
-            <div class="container-xxl">
-              <div
-                class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                <div class="text-body mb-2 mb-md-0">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  KDEKS
+  <script src="/nav.js"></script>
+  <script src="/header.js"></script>
+  <main class="nxl-container">
+    <div class="nxl-content">
+      <!-- [ page-header ] start -->
+      <script src="/breadchumb.js"></script>
+      <div class="main-content">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card stretch stretch-full">
+              <div class="card-body p-3">
+                <div class="card-datatable table-responsive p-5">
+                  <table id="sejarah" class="display" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Title EN</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-          </footer>
-          <!-- / Footer -->
-
-          <div class="content-backdrop fade"></div>
+          </div>
         </div>
-        <!-- Content wrapper -->
       </div>
-      <!-- / Layout page -->
+      <!-- [ Main Content ] end -->
     </div>
-
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
-
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-  </div>
-  <!-- / Layout wrapper -->
-
-  <script src="/layout/footer.js"></script>  
-  
+    <!-- [ Footer ] start -->
+    <footer class="footer">
+      <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+        <span>Copyright ©</span>
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+      <div class="d-flex align-items-center gap-4">
+        <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+        <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+        <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+      </div>
+    </footer>
+  </main>
+  <script src="/assets/vendors/js/vendors.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-  <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+  <script src="/assets/js/theme-customizer-init.min.js"></script>
+
   <script>
     $(document).ready(function () {
       // 2. Inisialisasi DataTable
@@ -149,7 +108,6 @@
 
     });
   </script>
-
 </body>
 
 </html>
