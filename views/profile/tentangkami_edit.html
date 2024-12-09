@@ -80,6 +80,13 @@
                                             <input type="text" class="form-control" name="tag" id="tag" />
                                         </div>
 
+                                        <div class="col-lg-12 mb-4">
+                                            <label class="form-label">Provinsi</label>
+                                            <select class="form-control" name="id_province" id="provincesss" required>
+                                                <option value="0"> Choose </option>
+                                            </select>
+                                        </div>
+
                                         <div class="col-lg-12 mb-4 text-left">
                                             <label class="form-label"></label>
                                             <button class="btn btn-primary" type="submit">Simpan</button>
@@ -121,19 +128,37 @@
 </body>
 <script>
     window.addEventListener("load", async () => {
+        let id_province;
         await getUrlById();
+        await getProvinces();
     })
     function getUrlById() {
         const URLS = new URL(window.location.href);
         fetch('/api_detailabout/' + URLS.pathname.split('/')[2])
             .then(data => data.json())
             .then((rows) => {
+                id_province = rows[0]?.id_province;
                 document.getElementById("id").value = rows[0]?.id;
                 document.getElementById("title").value = rows[0]?.title;
                 document.getElementById("title_en").value = rows[0]?.title_en;
                 document.getElementById("editor3").innerHTML = rows[0]?.content;
                 document.getElementById("editor4").innerHTML = rows[0]?.content_en;
                 document.getElementById("tag").value = rows[0]?.tag;
+            })
+    }
+
+    function getProvinces() {
+        fetch('/provinces')
+            .then(response => response.json())
+            .then((data) => {
+                data.forEach(element => {
+                    const choosed = (element?.id == id_province) ? true : false ;
+                    const ddd = document.createElement('option')
+                    ddd.value = `${element?.id}`;
+                    ddd.text = `${element?.province_name}`;
+                    ddd.selected = choosed
+                    document.getElementById("provincesss").append(ddd);
+                });
             })
     }
 </script>

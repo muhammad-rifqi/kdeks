@@ -18,9 +18,9 @@ const do_login = async (req, res) => {
         res.cookie("name", sql[0]?.name);
         res.redirect("/dashboard");
     } else {
-        
+
         res.redirect("/");
-    } 
+    }
 
 }
 
@@ -35,7 +35,7 @@ const do_login = async (req, res) => {
 //         res.cookie("name", sql[0]?.name);
 //         res.redirect("/dashboard");
 //     } else {
-        
+
 //         res.redirect("/");
 //     } 
 
@@ -273,18 +273,42 @@ const abouts = async (req, res) => {
 
 }
 
+function getNameById(id) {
+    const getID = new Promise(
+        async (resolve, reject) => {
+            const idToNameMapArray = await executeQuery("SELECT * FROM province where id = ? ", [id]);
+            const idToNameMap = idToNameMapArray[0]?.province_name;
+            resolve(idToNameMap);
+        });
+    getID.then((promisedata) => {
+        return promisedata || "Unknown";
+    })
+}
+
 const detailabout = async (req, res) => {
     const id_abouts = req.params.id;
     const sql = await executeQuery("SELECT *  FROM  abouts where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [id_abouts]);
     if (sql?.length > 0) {
-        res.status(200).json(sql)
+        const arr = {
+            "id": sql[0]?.id,
+            "title": sql[0]?.title,
+            "title_en": sql[0]?.title_en,
+            "tag": sql[0]?.tag,
+            "content": sql[0]?.content,
+            "created_at": sql[0]?.created_at,
+            "web_identity": sql[0]?.web_identity,
+            "id_province": sql[0]?.id_province,
+            "updated_at": sql[0]?.updated_at,
+            "deleted_at": sql[0]?.deleted_at,
+        }
+        res.status(200).json(arr)
     } else {
         res.status(200).json({ "success": false })
     }
 }
 
 const updateabout = async (req, res) => {
-    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id]);
+    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ?, id_province = ? where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id_province, req.body.id]);
     if (sql) {
         res.redirect('/tentangkami');
     } else {
@@ -309,7 +333,7 @@ const detailhistory = async (req, res) => {
 }
 
 const updatehistory = async (req, res) => {
-    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ? where id = ? AND web_identity = 'kdeks' AND tag = 'history' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id]);
+    const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ?, id_province = ? where id = ? AND web_identity = 'kdeks' AND tag = 'history' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id_province, req.body.id]);
     if (sql) {
         res.redirect('/sejarah');
     } else {
@@ -317,6 +341,11 @@ const updatehistory = async (req, res) => {
     }
 }
 
+const provinces = async (req, res) => {
+    const sql = await executeQuery("SELECT * FROM province");
+    res.status(200).json(sql)
+
+}
 
 //::::::::::::::::::::::::::::::End Of Abouts :::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -918,6 +947,7 @@ module.exports = {
     history,
     detailhistory,
     updatehistory,
+    provinces,
     users,
     userroles,
     insertusers,
