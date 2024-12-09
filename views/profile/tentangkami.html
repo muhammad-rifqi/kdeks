@@ -1,113 +1,127 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <meta name="keyword" content="" />
-    <meta name="author" content="theme_ocean" />
-    <title>KDEKS BACKEND || Dashboard</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/theme.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <meta name="keyword" content="" />
+  <meta name="author" content="theme_ocean" />
+  <title>KDEKS BACKEND || Dashboard</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/theme.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
 </head>
 
 <body>
-    <script src="/nav.js"></script>
-    <script src="/header.js"></script>
-    <main class="nxl-container">
-        <div class="nxl-content">
-            <!-- [ page-header ] start -->
-            <script src="/breadchumb.js"></script>
-            <div class="main-content">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card stretch stretch-full">
-                            <div class="card-body p-3">
-                              <div class="card-datatable table-responsive p-5">
-                                <table id="tk" class="display" style="width: 100%;">
-                                  <thead>
-                                    <tr>
-                                      <th>ID</th>
-                                      <th>Title</th>
-                                      <th>Title EN</th>
-                                      <th>Actions</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                  </tbody>
-                                </table>
-                
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- [ Main Content ] end -->
-        </div>
-        <!-- [ Footer ] start -->
-        <footer class="footer">
-            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
-                <span>Copyright ©</span>
-                <script>
-                    document.write(new Date().getFullYear());
-                </script>
-            </p>
-            <div class="d-flex align-items-center gap-4">
-                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
-                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
-                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
-            </div>
-        </footer>
-    </main>
-    <script src="/assets/vendors/js/vendors.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-    
-    <script src="/assets/js/theme-customizer-init.min.js"></script>
+  <script src="/nav.js"></script>
+  <script src="/header.js"></script>
+  <main class="nxl-container">
+    <div class="nxl-content">
+      <!-- [ page-header ] start -->
+      <script src="/breadchumb.js"></script>
+      <div class="main-content">
+        <div class="row">
+          <p>
+            <button class="btn btn-primary" onclick="window.location.href='/tentangkami_add'"> Tambah </button>
+          </p>
+          <div class="col-lg-12">
+            <div class="card stretch stretch-full">
+              <div class="card-body p-3">
+                <div class="card-datatable table-responsive p-5">
+                  <table id="tk" class="display" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Title EN</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
 
-    <script>
-      $(document).ready(function () {
-        // 2. Inisialisasi DataTable
-        $('#tk').DataTable({
-          "ajax": {
-            "url": "/api_about",
-            "dataSrc": ""
-          },
-          "columns": [
-            { "data": "id" },
-            { "data": "title" },
-            { "data": "title_en" },
-            {
-              "data": null,
-              "render": function (data, type, row) {
-                return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button></p>`;
-              }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [ Main Content ] end -->
+    </div>
+    <!-- [ Footer ] start -->
+    <footer class="footer">
+      <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+        <span>Copyright ©</span>
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+      </p>
+      <div class="d-flex align-items-center gap-4">
+        <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+        <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+        <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+      </div>
+    </footer>
+  </main>
+  <script src="/assets/vendors/js/vendors.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+
+  <script src="/assets/js/theme-customizer-init.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // 2. Inisialisasi DataTable
+      $('#tk').DataTable({
+        "ajax": {
+          "url": "/api_about",
+          "dataSrc": ""
+        },
+        "columns": [
+          { "data": "id" },
+          { "data": "title" },
+          { "data": "title_en" },
+          {
+            "data": null,
+            "render": function (data, type, row) {
+              return `<p>
+                  <button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
+                  <button class='delete-btn btn btn-danger' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Delete</button>
+                  </p>`;
             }
-          ],
-          lengthMenu: [10, 25, 50, 100],
-          dom: '<"dt-top-container"<l><"dt-center-in-div"B><f>r>t<"dt-filter-spacer"f><ip>',
-          buttons: [
-            'copy',
-            'csv',
-            'excel',
-            'pdf',
-            'print'
-          ],
-        });
-  
-        $('#tk').on('click', '.edit-btn', function () {
-          var id = $(this).data('id');
-          window.location.href = '/tentangkami_edit/' + id;
-        });
-  
+          }
+        ],
+        lengthMenu: [10, 25, 50, 100],
+        dom: '<"dt-top-container"<l><"dt-center-in-div"B><f>r>t<"dt-filter-spacer"f><ip>',
+        buttons: [
+          'copy',
+          'csv',
+          'excel',
+          'pdf',
+          'print'
+        ],
       });
-    </script>
+
+      $('#tk').on('click', '.edit-btn', function () {
+        var id = $(this).data('id');
+        window.location.href = '/tentangkami_edit/' + id;
+      });
+
+      $('#tk').on('click', '.delete-btn', function () {
+        var id = $(this).data('id');
+        if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
+          window.location.href = '/deletetentangkami/' + id;
+        }
+      });
+
+    });
+  </script>
 </body>
 
 </html>

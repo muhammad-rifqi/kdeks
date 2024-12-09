@@ -85,12 +85,20 @@ apps.get('/tentangkami', (req, res) => {
     res.sendFile(path.resolve('./views/profile/tentangkami.html'));
 })
 
+apps.get('/tentangkami_add', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/tentangkami_add.html'));
+})
+
 apps.get('/tentangkami_edit/:id', (req, res) => {
     res.sendFile(path.resolve('./views/profile/tentangkami_edit.html'));
 })
 
 apps.get('/sejarah', (req, res) => {
     res.sendFile(path.resolve('./views/profile/sejarah.html'));
+})
+
+apps.get('/sejarah_add', (req, res) => {
+    res.sendFile(path.resolve('./views/profile/sejarah_add.html'));
 })
 
 apps.get('/sejarah_edit/:id', (req, res) => {
@@ -265,11 +273,19 @@ apps.get('/elibrary_delete/:id/:file', db.deletefileupload);
 
 apps.get('/api_about', db.abouts);
 
+apps.post('/inserttentangkami', db.insertabout);
+
 apps.get('/api_detailabout/:id', db.detailabout);
 
 apps.post('/updatetentangkami', db.updateabout);
 
+apps.get('/deletetentangkami/:id', db.deleteabout);
+
 apps.get('/api_history', db.history);
+
+apps.get('/deletesejarah/:id', db.deletehistory);
+
+apps.post('/insertsejarah', db.inserthistory);
 
 apps.get('/api_detailhistory/:id', db.detailhistory);
 

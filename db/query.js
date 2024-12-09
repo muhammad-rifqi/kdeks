@@ -309,8 +309,27 @@ const detailabout = async (req, res) => {
     }
 }
 
+const insertabout = async (req, res) => {
+    const sql = await executeQuery("INSERT into abouts (title,title_en,tag,content,content_en,web_identity,id_province)values(?,?,?,?,?,?,?) ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, 'kdeks',req.body.id_province]);
+    if (sql) {
+        res.redirect('/tentangkami');
+    } else {
+        res.redirect('/tentangkami');
+    }
+}
+
 const updateabout = async (req, res) => {
     const sql = await executeQuery("UPDATE abouts set title= ?, title_en= ?, tag= ?, content= ?, content_en= ?, id_province = ? where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, req.body.id_province, req.body.id]);
+    if (sql) {
+        res.redirect('/tentangkami');
+    } else {
+        res.redirect('/tentangkami');
+    }
+}
+
+const deleteabout = async (req, res) => {
+    const id_about = req.params.id;
+    const sql = await executeQuery('DELETE FROM  abouts where id=?', [id_about]);
     if (sql) {
         res.redirect('/tentangkami');
     } else {
@@ -322,6 +341,15 @@ const history = async (req, res) => {
     const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'history'");
     res.status(200).json(sql)
 
+}
+
+const inserthistory = async (req, res) => {
+    const sql = await executeQuery("INSERT into abouts (title,title_en,tag,content,content_en,web_identity,id_province)values(?,?,?,?,?,?,?) ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, 'kdeks', req.body.id_province]);
+    if (sql) {
+        res.redirect('/sejarah');
+    } else {
+        res.redirect('/sejarah');
+    }
 }
 
 const detailhistory = async (req, res) => {
@@ -347,6 +375,16 @@ const provinces = async (req, res) => {
     const sql = await executeQuery("SELECT * FROM province");
     res.status(200).json(sql)
 
+}
+
+const deletehistory = async (req, res) => {
+    const id_history = req.params.id;
+    const sql = await executeQuery('DELETE FROM  abouts where id=?', [id_history]);
+    if (sql) {
+        res.redirect('/sejarah');
+    } else {
+        res.redirect('/sejarah');
+    }
 }
 
 //::::::::::::::::::::::::::::::End Of Abouts :::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -946,9 +984,13 @@ module.exports = {
     abouts,
     detailabout,
     updateabout,
+    deleteabout,
+    insertabout,
     history,
     detailhistory,
+    inserthistory,
     updatehistory,
+    deletehistory,
     provinces,
     users,
     userroles,

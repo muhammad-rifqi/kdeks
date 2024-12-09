@@ -26,6 +26,9 @@
       <script src="/breadchumb.js"></script>
       <div class="main-content">
         <div class="row">
+          <p>
+            <button class="btn btn-primary" onclick="window.location.href='/sejarah_add'"> Tambah </button>
+          </p>
           <div class="col-lg-12">
             <div class="card stretch stretch-full">
               <div class="card-body p-3">
@@ -86,7 +89,10 @@
           {
             "data": null,
             "render": function (data, type, row) {
-              return `<p><button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button></p>`;
+              return `<p>
+                <button class='edit-btn btn btn-warning' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Edit</button>
+                <button class='delete-btn btn btn-danger' data-id='${row.id}' style="padding:2px; float: left; margin: 2px">Delete</button>
+                </p>`;
             }
           }
         ],
@@ -104,6 +110,13 @@
       $('#sejarah').on('click', '.edit-btn', function () {
         var id = $(this).data('id');
         window.location.href = '/sejarah_edit/' + id;
+      });
+
+      $('#sejarah').on('click', '.delete-btn', function () {
+        var id = $(this).data('id');
+        if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
+          window.location.href = '/deletesejarah/' + id;
+        }
       });
 
     });
