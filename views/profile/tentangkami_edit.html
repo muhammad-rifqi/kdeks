@@ -128,7 +128,7 @@
 </body>
 <script>
     window.addEventListener("load", async () => {
-        let id_province;
+        let id_prov;
         await getUrlById();
         await getProvinces();
     })
@@ -137,7 +137,7 @@
         fetch('/api_detailabout/' + URLS.pathname.split('/')[2])
             .then(data => data.json())
             .then((rows) => {
-                id_province = rows[0]?.id_province;
+                id_prov = rows[0]?.id_province;
                 document.getElementById("id").value = rows[0]?.id;
                 document.getElementById("title").value = rows[0]?.title;
                 document.getElementById("title_en").value = rows[0]?.title_en;
@@ -152,7 +152,7 @@
             .then(response => response.json())
             .then((data) => {
                 data.forEach(element => {
-                    const choosed = (element?.id == id_province) ? true : false ;
+                    const choosed = (element?.id == id_prov) ? true : false ;
                     const ddd = document.createElement('option')
                     ddd.value = `${element?.id}`;
                     ddd.text = `${element?.province_name}`;

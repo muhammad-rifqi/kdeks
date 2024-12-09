@@ -287,9 +287,10 @@ function getNameById(id) {
 
 const detailabout = async (req, res) => {
     const id_abouts = req.params.id;
+    const arr = [];
     const sql = await executeQuery("SELECT *  FROM  abouts where id = ? AND web_identity = 'kdeks' and tag = 'about' ", [id_abouts]);
     if (sql?.length > 0) {
-        const arr = {
+        const rows = {
             "id": sql[0]?.id,
             "title": sql[0]?.title,
             "title_en": sql[0]?.title_en,
@@ -301,6 +302,7 @@ const detailabout = async (req, res) => {
             "updated_at": sql[0]?.updated_at,
             "deleted_at": sql[0]?.deleted_at,
         }
+        arr.push(rows);
         res.status(200).json(arr)
     } else {
         res.status(200).json({ "success": false })
