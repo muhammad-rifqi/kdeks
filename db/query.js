@@ -268,7 +268,7 @@ const deletenewscategory = async (req, res) => {
 //::::::::::::::::::::::::::::::Start Of Abouts:::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 const abouts = async (req, res) => {
-    const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'about'");
+    const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'about' order by id ASC limit 1");
     res.status(200).json(sql)
 
 }
@@ -338,7 +338,7 @@ const deleteabout = async (req, res) => {
 }
 
 const history = async (req, res) => {
-    const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'history'");
+    const sql = await executeQuery("SELECT * FROM abouts where web_identity = 'kdeks' and tag = 'history' order by id ASC limit 1");
     res.status(200).json(sql)
 
 }
