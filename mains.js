@@ -295,6 +295,8 @@ apps.post('/updatesejarah', db.updatehistory);
 
 apps.get('/provinces', db.provinces);
 
+apps.get('/api_sejarah_province/:id', db.history_province);
+
 apps.get('/api_opini', db.opini);
 
 apps.get('/api_opini_detail/:id', db.opini_detail);
