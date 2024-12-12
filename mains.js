@@ -273,6 +273,8 @@ apps.get('/elibrary_delete/:id/:file', db.deletefileupload);
 
 apps.get('/api_about', db.abouts);
 
+apps.get('/api_about_province/:id', db.about_province);
+
 apps.post('/inserttentangkami', db.insertabout);
 
 apps.get('/api_detailabout/:id', db.detailabout);

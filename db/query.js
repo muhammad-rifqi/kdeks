@@ -309,6 +309,30 @@ const detailabout = async (req, res) => {
     }
 }
 
+const about_province = async (req, res) => {
+    const id_province = req.params.id;
+    const arr = [];
+    const sql = await executeQuery("SELECT *  FROM  abouts where id_province = ? AND web_identity = 'kdeks' and tag = 'about' ", [id_province]);
+    if (sql?.length > 0) {
+        const rows = {
+            "id": sql[0]?.id,
+            "title": sql[0]?.title,
+            "title_en": sql[0]?.title_en,
+            "tag": sql[0]?.tag,
+            "content": sql[0]?.content,
+            "created_at": sql[0]?.created_at,
+            "web_identity": sql[0]?.web_identity,
+            "id_province": sql[0]?.id_province,
+            "updated_at": sql[0]?.updated_at,
+            "deleted_at": sql[0]?.deleted_at,
+        }
+        arr.push(rows);
+        res.status(200).json(arr)
+    } else {
+        res.status(200).json({ "success": false })
+    }
+}
+
 const insertabout = async (req, res) => {
     const sql = await executeQuery("INSERT into abouts (title,title_en,tag,content,content_en,web_identity,id_province)values(?,?,?,?,?,?,?) ", [req.body.title, req.body.title_en, req.body.tag, req.body.content, req.body.content_en, 'kdeks',req.body.id_province]);
     if (sql) {
@@ -983,6 +1007,7 @@ module.exports = {
     deletesk,
     abouts,
     detailabout,
+    about_province,
     updateabout,
     deleteabout,
     insertabout,
