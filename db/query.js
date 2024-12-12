@@ -323,6 +323,7 @@ const about_province = async (req, res) => {
             "created_at": sql[0]?.created_at,
             "web_identity": sql[0]?.web_identity,
             "id_province": sql[0]?.id_province,
+            "images": sql[0]?.images,
             "updated_at": sql[0]?.updated_at,
             "deleted_at": sql[0]?.deleted_at,
         }
@@ -425,6 +426,7 @@ const history_province = async (req, res) => {
             "created_at": sql[0]?.created_at,
             "web_identity": sql[0]?.web_identity,
             "id_province": sql[0]?.id_province,
+            "images": sql[0]?.images,
             "updated_at": sql[0]?.updated_at,
             "deleted_at": sql[0]?.deleted_at,
         }
