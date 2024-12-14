@@ -965,8 +965,8 @@ const opini_detail = async (req, res) => {
 }
 
 const insertopini = async (req, res) => {
-    const sql = await executeQuery("insert into opini(title,title_en,content,content_en) values(?,?,?,?)",
-        [req.body.title, req.body.title_en, req.body.content, req.body.content_en]);
+    const sql = await executeQuery("insert into opini(title,title_en,content,content_en,web_idenity) values(?,?,?,?,?)",
+        [req.body.title, req.body.title_en, req.body.content, req.body.content_en,'kdeks']);
     if (sql) {
         res.redirect('/opini');
     } else {
