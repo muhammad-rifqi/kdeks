@@ -946,7 +946,7 @@ const deletefileupload = async (req, res) => {
 
 
 const opini = async (req, res) => {
-    const sql = await executeQuery("SELECT * FROM opini")
+    const sql = await executeQuery("SELECT * FROM opini where web_identity = 'kdeks'")
     if (sql?.length > 0) {
         res.status(200).json(sql)
     } else {
